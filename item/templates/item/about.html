@@ -1,0 +1,196 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+	<section class="rabbit__bgr__info pd__btm__tp video__thumb__outer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="rabbit__bgr__video__clip">
+						<div class="bgr__video__thumb">
+							<img src="{{ about.thumbnail_image.url }}" alt="">
+							<div class="video__play__btn">
+								<a href="#myModal" data-toggle="modal" data-url="{{ about.video }}"><img src="{% static 'images/vdo__play__icn.png' %}" alt=""></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="brg__contain__about__rabit">
+						<div class="dhulikhel__head__rabbit">
+							<h3>{{ about.heading }}</h3>
+						</div>
+						<div class="bgr__heading__content">
+							<p>
+								{{ about.description|linebreaks }}
+							</p>	
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="what__we__do pd__btm__tp">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 mx-auto text-center">
+					<div class="section__heading">
+						<h2>What we do</h2>
+						<div class="contain__about__we__do">
+							<p>Online learning offers a new way to explore subjects you’re passionate about.</p>
+							<p>Find your interests by browsing our online course categories:</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center btm__line__breaker">
+				{% for item in we_do %}
+				<div class="col-md-4">
+					<div class="rabbit__service__type">
+						<div class="service__icon__type">
+							<div class="service__title">
+							<img src="{{ item.icon.url  }}" alt="">	
+							  <h6>{{ item.title|linebreaks }}</h6>
+						   </div>
+						</div>
+						<div class="service__content">
+							<p>
+								{{ item.description }}
+							</p>
+						</div>
+						<div class="service__more__detail">
+							<a href="#">More in detail</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				
+			</div>
+			<div class="row pd__btm__tp">
+				<div class="col-md-5">
+					<div class="rabbit__achievement">
+						<div class="section__heading no__padding__heading wht__heading">
+									    <h3>Proud to showcase awards</h3>
+									</div>
+						<div class="multi__para__bx mb-5">
+										<p>
+											Donec in. Tincidunt leo elit blandit morbi mus habitant leo. Torquent laoreet. Fermentum ligula convallis dui facilisis, semper scelerisque.
+										</p> 
+										<p>
+											Condimentum convallis lacinia augue eros pharetra ac dis risus ante libero nunc accumsan dolor per pretium hendrerit. Mus donec neque. Nunc. Non vel molestie sociosqu nonummy erat orci netus. Litora tortor egestas, velit venenatis. Nibh mauris nec sollicitudin. Suscipit lectus mus, sociis conubia.
+										</p>
+									</div>
+					</div>	
+				</div>
+				<div class="col-md-7">
+					{% for item in award %}
+					<div class="award__and__progress__rbt">
+						<div class="awards__achieved">
+							<span class="in__numbers">{{ forloop.counter }}</span>
+						</div>
+						<div class="award__providers">
+							<h6>
+								<a href="#">{{ item.award_title }}</a>
+							</h6>
+							<p>{{ item.award_description|linebreaks }}</p>
+
+						</div>
+					</div>
+					<div class="rwd__achiv__line__breaker"></div>
+					{% endfor %}
+
+				</div>
+			</div>
+			<div class="row pd__btm__tp">
+				<div class="col-md-4">
+					<div class="partner__and__collaborators">
+						<div class="ptnr__colbrts__title">
+							<h5>Partner & collaborators</h5>
+							<p>Tincidunt leo elit blandit morbi mus habitant leo. Torquent laoreet. Fermentum ligula convallis dui facilisis, semper scelerisque.
+
+							</p>
+						</div>
+					</div>
+				</div>
+				{% for item in partner %}
+				<div class="col-md-4">
+					<div class="with__thumb__colabrts border__wrapper">
+						<div class="thumb__img__ptnr">
+							<img src="{{ item.company_logo.url }}" alt="">
+						</div>
+						<div class="ptnr__colbrts__title">
+							<h5>{{ item.company_name }}</h5>
+							<p>{{ item.description }}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			
+		</div>
+	</section>
+	<section class="wht__people___say pd__btm">	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 mx-auto">
+					<div class="wrapper__for__sty">
+						<div class="success__sty__head">
+							<h3>What people say about us</h3>
+						</div>
+						<div class="success__stories__rabbit owl-carousel owl-theme">
+							{% for item in testimonial %}
+						    <div class="item">
+								<div class="success__sty__bdy__content">
+								 	<p>“{{ item.description }}”</p>
+								</div>
+								<div class="thumb__and__name__position">
+									<div class="image__of__teller">
+										<img src="{{ item.person_image.url }}" alt="">
+									</div>
+									<div class="teller__position">
+										<p>{{ item.person_name }}</p>
+										<p>{{ item.position }}</p>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						    
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block scripts %}
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>
+        <div class="modal-body" id="yt-player">
+				<iframe width="100%" height="430px" id="modal" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	<script>
+		$("#about").addClass('active');
+		$('#myModal').on('show.bs.modal', function (event) {
+			var button = $(event.relatedTarget); // Button that triggered the modal
+			var url = button.data('url'); // Extract info from data-* attributes
+			var caption = button.data('caption');
+			var url = url.replace("watch?v=", "embed/")
+			$("#modal").attr("src", url);
+			$("#modalHeader").text(caption);
+		});
+	</script>
+	<script type="text/javascript">
+		$('#myModal').on('hidden.bs.modal', function () {
+			$("#modal").attr("src", "");	
+		});
+	</script>
+{% endblock %}
+

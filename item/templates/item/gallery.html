@@ -1,0 +1,106 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="rabbit__gallery pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 mx-auto">
+				<div class="section__heading text-center gallery__content">
+					<h2>View our gallery</h2>
+					<p>Himalayan Rabbits are naturally produced meat-type 
+						</br>rabbits raised
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="portfolio-masonry pdetails-imagezoom">
+                                        {% for item in gallery %}
+					<li>
+			   <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="{{ item.image.url }}" data-sub-html=".gall__meta">
+                                <img src="{{ item.image.url }}" alt="">
+                                <div class="gall__meta">
+                                        <h2>{{ item.title }}</h2>
+                                        <p>{{ item.description }}</p>
+                                </div>
+                           </div>
+                                        </li>
+                                        {% endfor %}
+					<!-- <li>
+						<div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab2.jpg" data-sub-html=".gall__meta">
+                                <img src="images/masonry/rab2.jpg" alt="">
+                                <div class="gall__meta">
+                                        <h2>Image title goes here 02</h2>
+                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                </div>
+                           </div>
+					</li> -->
+					<!-- <li>
+						<div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab3.jpg" data-sub-html=".gall__meta">
+                                <img src="images/masonry/rab3.jpg" alt="">
+                                <div class="gall__meta">
+                                        <h2>Image title goes here 03</h2>
+                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                </div>
+                           </div>
+					</li> -->
+					<!-- <li>
+						<div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab4.jpg" data-sub-html=".gall__meta">
+                                <img src="images/masonry/rab4.jpg" alt="">
+                                <div class="gall__meta">
+                                        <h2>Image title goes here 04</h2>
+                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                </div>
+                           </div>
+					</li> -->
+					<!-- <li>
+						<div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab5.jpg" data-sub-html=".gall__meta">
+                                <img src="images/masonry/rab5.jpg" alt="">
+                                <div class="gall__meta">
+                                        <h2>Image title goes here 05</h2>
+                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                </div>
+                           </div>
+					</li> -->
+					<!-- <li>
+						<div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab6.jpg" data-sub-html=".gall__meta">
+                                <img src="images/masonry/rab6.jpg" alt="">
+                                <div class="gall__meta">
+                                        <h2>Image title goes here 06</h2>
+                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                </div>
+                           </div>
+					</li> -->
+					<!-- <li>
+						<div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab7.jpg" data-sub-html=".gall__meta">
+                                <img src="images/masonry/rab7.jpg" alt="">
+                                <div class="gall__meta">
+                                        <h2>Image title goes here 07</h2>
+                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                </div>
+                           </div>
+					</li> -->
+					<!-- <li>
+						<div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/slide1.jpg" data-sub-html=".gall__meta">
+                                <img src="images/masonry/slide1.jpg" alt="">
+                                <div class="gall__meta">
+                                        <h2>Image title goes here 08</h2>
+                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                </div>
+                           </div>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block scripts %}
+	<script>
+		$("#gallery").addClass('active');
+	</script>
+{% endblock %}
+

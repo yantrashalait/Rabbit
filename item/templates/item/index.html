@@ -1,0 +1,483 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+	<section class="home__main__banner pd__tp">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-5">
+					<div class="main__ban__bx">
+						<div class="section__heading wht__heading no__padding__heading">
+							<span class="section__title">Since 2012</span>
+							<h1>First commercial rabbit farm in Nepal</h1>
+							<p>Established in 2012 with the purpose of commercializing the healthy rabbit meat into the market.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="farm__slogan">
+						<p>{{ company_detail.slogan }}</p>
+					</div>
+					<!-- carousel -->
+			          <div class="rabbit__footage__slider owl-carousel owl-theme">
+						   {% for item in program %}
+			               <div class="item">
+							
+			              		<div class="program__footage">
+									 
+			              			<div class="overlay__foot"></div>
+					                <img src="{{ item.image.url }}">
+					                <div class="footage__contant">
+					                	<div class="footage___title">
+					                		<h2>{{ item.title }}</h2>
+					                	</div>
+					                	<div class="footage__body__content mb-4">
+					                		<p>{{ item.description }}</p>
+					                	</div>
+					                	<div class="view__detail__footage">
+					                		<a href="#">View Detail<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+					                	</div>
+									</div>
+									
+								</div>
+								
+						   </div><!--item -->
+						   {% endfor %}
+			           </div>
+   					<!-- carousel -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="home__about__sec pd__btm__tp">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 mx-auto text-center">
+					<div class="section__heading">
+					    <span class="section__title">Our Introduction</span>
+					    <h2>{{ company_detail.company_name }}</h2>
+					    <p>{{ company_detail.company_description }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-lg-7">
+					<div class="about__sec__imgs text-center">
+						<div class="comp__dur__time__holder">
+							<img src="{% static 'images/badge__icon.png' %}" alt="">
+							<span class="comp__dur__time">
+								Over 7 years of journey
+							</span>
+						</div>
+						<img src="{% static 'images/about__sec__img.jpg' %}" alt="">
+						<div class="about__sec__popvdo__bx">
+						    <div class="pdetails-imagezoom popvdo__icn__hldr">
+								<div class="pdetails-singleimage" data-src="https://www.youtube.com/embed/tgbNymZ7vqY" data-sub-html=".gall__meta">
+		                            <img src="{{ company_intro.image.url }}" alt="">
+		                            <div class="vdo__play__icon">
+		                            	<img src="{% static 'images/vdo__play__icn.png' %}" alt="">
+		                            </div>
+		                        </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5">
+					<div class="muliti__lists__bx hm__multi__list__one">
+						<div class="multi__lists">
+							<div class="small__sec__heading">
+								<h3>Vision</h3>
+								<p>{{ company_intro.vision }}</p>
+							</div>
+						</div>
+						<div class="multi__lists">
+							<div class="small__sec__heading">
+								<h3>Mission</h3>
+								<p>{{ company_intro.mission }}</p>
+							</div>
+						</div>
+						<div class="multi__lists">
+							<div class="small__sec__heading">
+								<h3>Strategy</h3>
+								<p>{{ company_intro.strategy }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="hm__what__we__offer pd__btm__tp">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-3">
+					<div class="section__heading wht__heading no__padding__heading">
+					    <span class="section__title">Our Services</span>
+					    <h2>What we offer</h2>
+					    <p>To become a centre for excellence in rabbit breed production, meat marketing by building</p>
+					</div>
+				</div>
+				{% for item in offer %}
+				<div class="col-md-3">
+					
+					<div class="offers__bx">
+						
+						<img src="{{ item.image.url }}" alt="">
+						<div class="offers__desc">
+							<div class="section__heading wht__heading no__padding__heading">
+							    <h3>{{ item.title }}</h3>
+							    <p>{{ item.description }}</p>
+							</div>
+							<div class="link__with__top__margin wht__link">
+								<a href="#">Explore our Products <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+				{% endfor %}
+				
+				<!-- <div class="col-md-3">
+					<div class="offers__bx">
+						<img src="{% static 'images/offer02.jpg' %}" alt="">
+						<div class="offers__desc">
+							<div class="section__heading wht__heading no__padding__heading">
+							    <h3>Services</h3>
+							    <p>Himalayan Rabbits are naturally produced meat-type rabbits raised</p>
+							</div>
+							<div class="link__with__top__margin wht__link">
+								<a href="#">Explore our Services <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<!-- <div class="col-md-3">
+					<div class="offers__bx">
+						<img src="{% static 'images/offer03.jpg' %}" alt="">
+						<div class="offers__desc">
+							<div class="section__heading wht__heading no__padding__heading">
+							    <h3>Business Opportunity</h3>
+							    <p>Himalayan Rabbits are naturally produced meat-type rabbits raised</p>
+							</div>
+							<div class="link__with__top__margin wht__link">
+								<a href="#">Explore Opportunities <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							</div>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+	<section class="participation__sec pd__tp">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="participation__ban" style="background-image: url({{ work_together.image.url }});">
+						<div class="row">
+							<div class="col-lg-7 offset-md-1">	
+								<div class="section__heading wht__heading no__padding__heading">
+								    <h2>{{ work_together.heading }}</h2>
+								    <p>{{ work_together.description }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 mx-auto">
+					<div class="row">
+						{% for item in work_for %}
+						<div class="col-md-4 participation__lists__hldr">
+							
+							<div class="participation__lists wht__link">
+								<a href="#">
+									<div class="section__heading wht__heading no__padding__heading">
+									    <h3>{{ item.title }}</h3>
+									    <p>{{ item.description }}</p>
+									</div>
+									<div class="link__with__top__margin">
+									    Explore More <i class="fa fa-angle-right" aria-hidden="true"></i>
+									</div>
+								</a>
+							</div>
+							
+						</div>
+						{% endfor %}
+						<!-- <div class="col-md-4 participation__lists__hldr">
+							<div class="participation__lists wht__link">
+								<a href="#">
+									<div class="section__heading wht__heading no__padding__heading">
+									    <h3>For<br/>Individuals</h3>
+									    <p>Himalayan Rabbits are naturally produced meat-type rabbits raised</p>
+									</div>
+									<div class="link__with__top__margin">
+									    Explore More <i class="fa fa-angle-right" aria-hidden="true"></i>
+									</div>
+								</a>
+							</div>
+						</div> -->
+						<!-- <div class="col-md-4 participation__lists__hldr">
+							<div class="participation__lists wht__link">
+								<a href="#">
+									<div class="section__heading wht__heading no__padding__heading">
+									    <h3>For<br/>Governmental Orgs.</h3>
+									    <p>Himalayan Rabbits are naturally produced meat-type rabbits raised</p>
+									</div>
+									<div class="link__with__top__margin">
+									    Explore More <i class="fa fa-angle-right" aria-hidden="true"></i>
+									</div>
+								</a>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="success__stor__heading__sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 mx-auto">
+				    <div class="section__heading text-center">
+				        <span class="section__title">Success Stories</span>
+				        <h2>Our Impact On Society</h2>
+				        <p>To become a centre for excellence in rabbit breed production, meat marketing by building</p>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="success__stor__yelled pd__btm__tp">
+		<!-- carousel -->
+			<div class="story__yeller__caro owl-carousel owl-theme">
+				{% for item in story %}
+			    <div class="item">
+			    	<div class="container">
+			    		<div class="row align-items-center">
+					        <div class="col-sm-3">
+					        	<div class="story__yeller__img">
+					        		<img src="{{ item.image.url }}" alt="">
+					        	</div>
+					        </div>
+					        <div class="col-sm-3">
+					        	<div class="story_yeller__vdo">
+					        		<div class="pdetails-imagezoom popvdo__icn__hldr">
+									    <div class="pdetails-singleimage" data-src="https://www.youtube.com/embed/tgbNymZ7vqY" data-sub-html=".gall__meta">
+									        <div class="ply__vdo__story">
+									        	<div class="play__icon__hldr">
+										        	<span>Play Video</span>
+										        	<span>
+										        		<a href="{{ item.video }}"><img src="{% static 'images/vdo__play__icn__small.png' %}" alt=""></a>
+										        	</span>
+									        	</div>
+									        </div>									        
+									    </div>
+									</div>
+					        	</div>
+					        </div>
+					        <div class="col-lg-6">
+					        	<div class="yellers__story__hldr">
+					        		<div class="section__heading no__padding__heading">
+									    <h3>Mr. {{ item.name }}</h3>
+									</div>
+									<div class="multi__para__bx mb-5">
+										<p>{{ item.description|linebreaks }}</p>
+									</div>
+									<div class="yellers__info">
+										<span class="yellers__desig mb-2">Farmer</span>
+										<span class="yellers__addr">Dhulikhel</span>
+									</div>
+					        	</div>
+					        </div>
+				        </div>
+			        </div>
+				</div><!-- item -->
+				{% endfor %}
+			    <!-- <div class="item">
+			    	<div class="container">
+			    		<div class="row align-items-center">
+					        <div class="col-sm-3">
+					        	<div class="story__yeller__img">
+					        		<img src="{% static 'images/story__yell01.jpg' %}" alt="">
+					        	</div>
+					        </div>
+					        <div class="col-sm-3">
+					        	<div class="story_yeller__vdo">
+					        		<div class="pdetails-imagezoom popvdo__icn__hldr">
+									    <div class="pdetails-singleimage" data-src="https://www.youtube.com/embed/tgbNymZ7vqY" data-sub-html=".gall__meta">
+									        <div class="ply__vdo__story">
+									        	<div class="play__icon__hldr">
+										        	<span>Play Video</span>
+										        	<span>
+										        		<img src="{% static 'images/vdo__play__icn__small.png' %}" alt="">
+										        	</span>
+									        	</div>
+									        </div>									        
+									    </div>
+									</div>
+					        	</div>
+					        </div>
+					        <div class="col-lg-6">
+					        	<div class="yellers__story__hldr">
+					        		<div class="section__heading no__padding__heading">
+									    <h3>Mr. John Doe</h3>
+									</div>
+									<div class="multi__para__bx mb-5">
+										<p>The company is looking for interested rabbit breeders, meat producers, fresh houses, meat marts, restaurants and meat marts to supply rabbit commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+										<p>The company is looking for interested rabbit breeders, meat producers, fresh houses, meat marts, restaurants and meat marts to supply rabbit commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+									</div>
+									<div class="yellers__info">
+										<span class="yellers__desig mb-2">Farmer</span>
+										<span class="yellers__addr">Dhulikhel</span>
+									</div>
+					        	</div>
+					        </div>
+				        </div>
+			        </div>
+			    </div>item -->
+			    <!-- <div class="item">
+			    	<div class="container">
+			    		<div class="row align-items-center">
+					        <div class="col-sm-3">
+					        	<div class="story__yeller__img">
+					        		<img src="{% static 'images/story__yell01.jpg' %}" alt="">
+					        	</div>
+					        </div>
+					        <div class="col-sm-3">
+					        	<div class="story_yeller__vdo">
+					        		<div class="pdetails-imagezoom popvdo__icn__hldr">
+									    <div class="pdetails-singleimage" data-src="https://www.youtube.com/embed/tgbNymZ7vqY" data-sub-html=".gall__meta">
+									        <div class="ply__vdo__story">
+									        	<div class="play__icon__hldr">
+										        	<span>Play Video</span>
+										        	<span>
+										        		<img src="{% static 'images/vdo__play__icn__small.png' %}" alt="">
+										        	</span>
+									        	</div>
+									        </div>									        
+									    </div>
+									</div>
+					        	</div>
+					        </div>
+					        <div class="col-lg-6">
+					        	<div class="yellers__story__hldr">
+					        		<div class="section__heading no__padding__heading">
+									    <h3>Mr. John Doe</h3>
+									</div>
+									<div class="multi__para__bx mb-5">
+										<p>The company is looking for interested rabbit breeders, meat producers, fresh houses, meat marts, restaurants and meat marts to supply rabbit commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+										<p>The company is looking for interested rabbit breeders, meat producers, fresh houses, meat marts, restaurants and meat marts to supply rabbit commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+									</div>
+									<div class="yellers__info">
+										<span class="yellers__desig mb-2">Farmer</span>
+										<span class="yellers__addr">Dhulikhel</span>
+									</div>
+					        	</div>
+					        </div>
+				        </div>
+			        </div>
+			    </div>item -->
+			</div>
+			<!-- carousel -->
+	</section>
+	<section class="hm__blg__list pd__btm__tp">
+		<div class="container">
+			<div class="row">
+			    <div class="col-lg-7 mx-auto">
+			        <div class="section__heading text-center">
+			            <span class="section__title">From the news and events</span>
+			            <h2>Know what is going on</h2>
+			            <p>The company is looking for interested rabbit breeders, meat producers, fresh houses, meat marts, restaurants and meat marts to supply rabbit</p>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				{% for item in recent %}
+				<div class="col-md-4">
+					
+				    <div class="blog__listshm__holder">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="{% url 'item:blog-detail' item.pk %}">
+				                    <img src="{{ item.image.url }}" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc">
+				                <div class="blog__hm__meta">
+				                    <span class="date__publish">{{ item.date }}</span>
+				                </div>
+				                <div class="blog__desc">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="{% url 'item:blog-detail' item.pk %}">{{ item.title }}</a></h3>
+				                        <p>{{ item.description|truncatechars:100 }}</p>
+				                    </div>
+				                    <div class="blog__detail__link">
+				                        <a href="{% url 'item:blog-detail' item.pk %}">Read More</a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+					</div>
+					
+				</div>
+				{% endfor %}
+				<!-- <div class="col-md-4">
+				    <div class="blog__listshm__holder">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="#">
+				                    <img src="{% static 'images/blog01.jpg' %}" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc">
+				                <div class="blog__hm__meta">
+				                    <span class="date__publish">4 April, 2019</span>
+				                </div>
+				                <div class="blog__desc">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="#">Three Days Workshop by International Trainer</a></h3>
+				                        <p>Scalable boots on the ground milestones grit thought lader her body her rights thought(...)</p>
+				                    </div>
+				                    <div class="blog__detail__link">
+				                        <a href="#">Read More</a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				</div> -->
+				<!-- <div class="col-md-4">
+				    <div class="blog__listshm__holder">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="#">
+				                    <img src="{% static 'images/blog01.jpg' %}" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc">
+				                <div class="blog__hm__meta">
+				                    <span class="date__publish">4 April, 2019</span>
+				                </div>
+				                <div class="blog__desc">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="#">Three Days Workshop by International Trainer</a></h3>
+				                        <p>Scalable boots on the ground milestones grit thought lader her body her rights thought(...)</p>
+				                    </div>
+				                    <div class="blog__detail__link">
+				                        <a href="#">Read More</a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block scripts %}
+	<script>
+		$("#home").addClass('active');
+	</script>
+{% endblock %}

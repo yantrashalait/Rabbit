@@ -1,0 +1,241 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="rabbit__services pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 mx-auto">
+			        <div class="rabbit__service__content text-center text-white">
+			            <h2>Explore our services</h2>
+			            <p>Online learning offers a new way to explore subjects you’re passionate about.</br>
+							Find your interests by browsing our online course categories:</p>
+						<div class="packages__btn">
+		            			<a href="#">View our packages</a>
+		            	</div>
+			        </div>
+			    </div>
+		</div>
+	</div>
+</section>
+<section class="what__we__serve pd__btm__tp">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 mx-auto text-center">
+					<div class="packages__we__serve__content">
+						<h2>What we serve</h2>
+						<div class="contain__about__we__do">
+							<p>Online learning offers a new way to explore subjects you’re passionate about.</p>
+							<p>Find your interests by browsing our online course categories:</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				{% for item in service %}
+				<div class="col-md-4 mb-3">
+					
+					<div class="rabbit__service__type">
+						<div class="service__icon__type">
+						   <div class="rabit__srvs__img">	
+						   	  <img src="{{ item.image.url }}" alt="">	
+						   </div>
+						  <h6>{{ item.title }}</h6>
+						</div>
+						<div class="service__content">
+							<p>
+								{{ item.description }}
+							</p>
+						</div>
+						<div class="service__more__detail">
+							<a href="{% url 'item:service-detail' item.pk %}">More in detail</a>
+						</div>
+					</div>
+					
+				</div>
+				{% endfor %}
+				<!-- <div class="col-md-4 mb-3">
+					<div class="rabbit__service__type">
+						<div class="service__icon__type">
+						   <div class="rabit__srvs__img">	
+						   	  <img src="{% static 'images/services01.jpg' %}" alt="">	
+						   </div>
+						  <h6>Training</h6>
+						</div>
+						<div class="service__content">
+							<p>
+								Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs
+							</p>
+						</div>
+						<div class="service__more__detail">
+							<a href="#">More in detail</a>
+						</div>
+					</div>
+				</div> -->
+				<!-- <div class="col-md-4 mb-3">
+					<div class="rabbit__service__type">
+						<div class="service__icon__type">
+						   <div class="rabit__srvs__img">	
+						   	  <img src="{% static 'images/services01.jpg' %}" alt="">	
+						   </div>
+						  <h6>Monitoring</h6>
+						</div>
+						<div class="service__content">
+							<p>
+								Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs
+							</p>
+						</div>
+						<div class="service__more__detail">
+							<a href="#">More in detail</a>
+						</div>
+					</div>
+				</div> -->
+				<!-- <div class="col-md-4">
+					<div class="rabbit__service__type">
+						<div class="service__icon__type">
+						   <div class="rabit__srvs__img">	
+						   	  <img src="{% static 'images/services01.jpg' %}" alt="">	
+						   </div>
+						  <h6>Volunteering</h6>
+						</div>
+						<div class="service__content">
+							<p>
+								Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs
+							</p>
+						</div>
+						<div class="service__more__detail">
+							<a href="#">More in detail</a>
+						</div>
+					</div>
+				</div> -->
+				<!-- <div class="col-md-4">
+					<div class="rabbit__service__type">
+						<div class="service__icon__type">
+						   <div class="rabit__srvs__img">	
+						   	  <img src="{% static 'images/services01.jpg' %}" alt="">	
+						   </div>
+						  <h6>Rabbit Breeds</h6>
+						</div>
+						<div class="service__content">
+							<p>
+								Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs
+							</p>
+						</div>
+						<div class="service__more__detail">
+							<a href="#">More in detail</a>
+						</div>
+					</div>
+				</div> -->
+				<!-- <div class="col-md-4">
+					<div class="rabbit__service__type">
+						<div class="service__icon__type">
+						   <div class="rabit__srvs__img">	
+						   	  <img src="{% static 'images/services01.jpg' %}" alt="">	
+						   </div>
+						  <h6>Orientation</h6>
+						</div>
+						<div class="service__content">
+							<p>
+								Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs
+							</p>
+						</div>
+						<div class="service__more__detail">
+							<a href="#">More in detail</a>
+						</div>
+					</div>
+				</div> -->
+			</div>			
+		</div>
+</section>
+<section class="rabbit__available__packages pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 mx-auto">
+			        <div class="packages__for__rbt text-center">
+			            <h2>Explore our services</h2>
+			            <p>Online learning offers a new way to explore subjects you’re passionate about.</p>
+			            	<p>Find your interests by browsing our online course categories:</p>
+			        </div>
+			    </div>
+		</div>
+		<div class="row packages__plan__pd">
+			{% for item in package %}
+			<div class="col-md-4">
+				<div class="plans__and__enquery">
+					<div class="package__plan__numb">
+						<span>{{ forloop.counter }}</span>
+					</div>
+					<div class="plan__and__rupes">
+						<h5>{{ item.package_name }} / <span>{{ item.price }}</span></h5>
+					</div>
+					<div class="types__of__package__plan">
+						<ul>
+							{% for obj in item.package.all %}
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>{{ obj.service }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="plan__type__btn">
+						<a href="#">Enquery Now</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			<!-- <div class="col-md-4">
+				<div class="plans__and__enquery">
+					<div class="package__plan__numb">
+						<span>02</span>
+					</div>
+					<div class="plan__and__rupes">
+						<h5>Standard Plan / <span>10 Lakhs</span></h5>
+					</div>
+					<div class="types__of__package__plan">
+						<ul>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+						</ul>
+					</div>
+					<div class="plan__type__btn">
+						<a href="#">Enquery Now</a>
+					</div>
+				</div>
+			</div> -->
+			<!-- <div class="col-md-4">
+				<div class="plans__and__enquery">
+					<div class="package__plan__numb">
+						<span>03</span>
+					</div>
+					<div class="plan__and__rupes">
+						<h5>Platinum Plan / <span>15 Lakhs</span></h5>
+					</div>
+					<div class="types__of__package__plan">
+						<ul>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>explore subjects you’re passionate</li>
+						</ul>
+					</div>
+					<div class="plan__type__btn">
+						<a href="#">Enquery Now</a>
+					</div>
+				</div>
+			</div> -->
+
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block scripts %}
+	<script>
+		$("#service").addClass('active');
+	</script>
+{% endblock %}
+

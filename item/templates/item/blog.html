@@ -1,0 +1,213 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="news__blog">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="news__and__event__detail">
+					<h3>News & Events</h3>
+					<p>Online learning offers a new way to explore subjects you’re passionate about.</p>
+					<p>Find your interests by browsing our online course categories:</p>
+				</div>	
+			</div>
+		</div>
+		
+		<div class="row blog__tp_pd">
+			{% for item in blog %}
+			<div class="col-md-4">
+				<div class="news__and__thumb__rabbit">
+				   <div class="blog__thum">
+				       <a href="{% url 'item:blog-detail' item.pk %}">
+				          <img src="{{ item.image.url }}" alt="">
+				       </a>
+				    </div>
+				      <div class="blog__meta__desc">
+				      	<div class="blog__publish__date">
+				        		<span>Published on: {{ item.date }}</span>
+				        		<span>{{ item.category }}</span>
+				        </div>
+				        <div class="blog__desc blog__wrapper__box">
+				        	<div class="blog__content__rabbit">
+				                <h5><a href="{% url 'item:blog-detail' item.pk %}">{{ item.title }}</a></h5>
+				                <p>{{ item.description|truncatechars:100 }}</p>
+
+				             </div>
+				             <div class="blog__btn">
+				                 <a href="{% url 'item:blog-detail' item.pk %}">More in detail </a>
+				             </div>
+				         </div>
+				     </div>
+				</div>
+			</div>
+			{% endfor %}
+			<!-- <div class="col-md-4">
+				<div class="news__and__thumb__rabbit">
+				   <div class="blog__thum">
+				       <a href="#">
+				          <img src="{% static 'images/blog01.jpg' %}" alt="">
+				       </a>
+				    </div>
+				      <div class="blog__meta__desc">
+				      	<div class="blog__publish__date">
+				        		<span>Published on: 11/1/2019</span>
+				        		<span>News</span>
+				        </div>
+				        <div class="blog__desc blog__wrapper__box">
+				        	<div class="blog__content__rabbit">
+				                <h5><a href="#">Rabbit Farming in Nepal</a></h5>
+				                <p>Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs</p>
+
+				             </div>
+				             <div class="blog__btn">
+				                 <a href="#">More in detail </a>
+				             </div>
+				         </div>
+				     </div>
+				</div>
+			</div> -->
+			<div class="col-md-4 blog__container__sidebar">
+				<div class="recent__post__abt__rabt">
+					<div class="blgs__sidebar">
+						<h6>Recent Post</h6>
+					</div>
+					<div class="wrapper__post__blog">
+						<ul>
+							{% for item in recent %}
+							<li>
+								<a href="{% url 'item:blog-detail' item.pk %}">
+									<div class="news__sidebar__post">
+										<img src="{{ item.image.url }}" alt="">
+									</div>
+									<div class="post__content__sidebar">
+										<span>{{ item.category }}</span>
+										<h6>{{ item.title }}</h6>
+										<div class="news__post__date">
+											<span>Published on: {{ item.date }}</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							{% endfor %}
+							<!-- <li>
+								<a href="#">
+									<div class="news__sidebar__post">
+										<img src="{% static 'images/blog__news.jpg' %}" alt="">
+									</div>
+									<div class="post__content__sidebar">
+										<span>News</span>
+										<h6>Rabbit Distribution at Kagate Gaun</h6>
+										<div class="news__post__date">
+											<span>Published on: 11/12019</span>
+										</div>
+									</div>
+								</a>
+							</li> -->
+							<!-- <li>
+								<a href="#">
+									<div class="news__sidebar__post">
+										<img src="{% static 'images/blog__news.jpg' %}" alt="">
+									</div>
+									<div class="post__content__sidebar">
+										<span>News</span>
+										<h6>Rabbit Distribution at Kagate Gaun</h6>
+										<div class="news__post__date">
+											<span>Published on: 11/12019</span>
+										</div>
+									</div>
+								</a>
+							</li> -->
+							<!-- <li>
+								<a href="#">
+									<div class="news__sidebar__post">
+										<img src="{% static 'images/blog__news.jpg' %}" alt="">
+									</div>
+									<div class="post__content__sidebar">
+										<span>News</span>
+										<h6>Rabbit Distribution at Kagate Gaun</h6>
+										<div class="news__post__date">
+											<span>Published on: 11/12019</span>
+										</div>
+									</div>
+								</a>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		 <!-- <div class="row blog__tp_pd"> 
+			<div class="col-md-4">
+				<div class="news__and__thumb__rabbit">
+				   <div class="blog__thum">
+				       <a href="#">
+				          <img src="{% static 'images/blog01.jpg' %}" alt="">
+				       </a>
+				    </div>
+				      <div class="blog__meta__desc">
+				      	<div class="blog__publish__date">
+				        		<span>Published on: 11/1/2019</span>
+				        		<span>News</span>
+				        </div>
+				        <div class="blog__desc blog__wrapper__box">
+				        	<div class="blog__content__rabbit">
+				                <h5><a href="#">Rabbit Distribution at Kagate Gaun</a></h5>
+				                <p>Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs</p>
+
+				             </div>
+				             <div class="blog__btn">
+				                 <a href="#">More in detail </a>
+				             </div>
+				         </div>
+				     </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="news__and__thumb__rabbit">
+				   <div class="blog__thum">
+				       <a href="#">
+				          <img src="{% static 'images/blog01.jpg' %}" alt="">
+				       </a>
+				    </div>
+				      <div class="blog__meta__desc">
+				      	<div class="blog__publish__date">
+				        		<span>Published on: 11/1/2019</span>
+				        		<span>News</span>
+				        </div>
+				        <div class="blog__desc blog__wrapper__box">
+				        	<div class="blog__content__rabbit">
+				                <h5><a href="#">Rabbit Farming in Nepal</a></h5>
+				                <p>Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs</p>
+
+				             </div>
+				             <div class="blog__btn">
+				                 <a href="#">More in detail </a>
+				             </div>
+				         </div>
+				     </div>
+				</div>
+			</div>
+		</div>   -->
+
+		<div class="row recipes__pd-btm-top mg__btm__news__blog">
+			<div class="col-md-12">
+				<div class="bottom__pagination ">
+					<ul class="pagination">
+					    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+					    <li class="page-item"><a class="page-link" href="#">1</a></li>
+					    <li class="page-item"><a class="page-link" href="#">2</a></li>
+					    <li class="page-item"><a class="page-link" href="#">3</a></li>
+					    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+					  </ul>
+				</div> 
+			</div>
+		</div> 
+		
+	</div> 
+</section>
+{% endblock %}
+{% block scripts %}
+	<script>
+		$("#blog").addClass('active');
+	</script>
+{% endblock %}

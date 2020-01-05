@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Rabbit</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<header class="main__header">
+		<div class="container">
+			<div class="row">
+				<nav class="navbar navbar-expand-lg navbar-light">
+				  <a class="navbar-brand sitemain__logo" href="{% url 'item:home' %}">
+				  	<img src="{% static 'images/logo.png' %}" alt="rabbit logo">
+				  </a>
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"></span>
+				  </button>
+
+				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				    <ul class="navbar-nav ml-auto">
+				      <li class="nav-item" id="home">
+				        <a class="nav-link" href="{% url 'item:home' %}">Home</a>
+				      </li>
+				      <li class="nav-item" id="about">
+				        <a class="nav-link" href="{% url 'item:about' %}">About us</a>
+				      </li>
+				      <li class="nav-item" id="service">
+				        <a class="nav-link" href="{% url 'item:service' %}">Services</a></a>
+                      </li>
+                      <li class="nav-item" id="product">
+				        <a class="nav-link" href="{% url 'item:product' %}">Product</a></a>
+                      </li>
+                      <li class="nav-item" id="recipe">
+				        <a class="nav-link" href="{% url 'item:recipe' %}">Recipe</a></a>
+				      </li>
+                      <li class="nav-item" id="gallery">
+				        <a class="nav-link" href="{% url 'item:gallery' %}">Gallery</a></a>
+				      </li>
+				      <li class="nav-item" id="shop">
+				        <a class="nav-link" href="{% url 'item:shop' %}">Shop</a>
+				      </li>
+				      <li class="nav-item" id="blog">
+				        <a class="nav-link" href="{% url 'item:blog' %}">News and Events</a>
+                      </li>
+                      <li class="nav-item" id="faq">
+				        <a class="nav-link" href="{% url 'item:faq' %}">FAQ</a>
+				      </li>
+				      <li class="nav-item" id="contact">
+				        <a class="nav-link" href="{% url 'item:contact' %}">Contact us</a>
+				      </li>
+				    </ul>
+				  </div>
+				</nav>
+			</div>
+		</div>
+    </header>
+{% block content %}
+{% endblock %}
+<footer class="main__footer pd__btm__tp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="foot__component__wrapper">
+                    <div class="foot__comp__oveview">
+                        <div class="foot__comp__ov_txt">
+                            <p>We bring the power of ownership to your organization <br/>by aligning strategy and culture.</p>
+                        </div>
+                    </div>
+                    <div class="foot__menulinks">
+                        <span class="foot__menuttl">
+                            Contact Info
+                        </span>
+                        <div class="foot__cont__info">
+                            <p>{{ info.location }}</p>
+                            <br/>
+                            <p>{{ info.contact_number }}<br/>{{ info.email }}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="foot__menulinks">
+                    <span class="foot__menuttl foot__nav__head">
+                        Resources
+                    </span>
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#"> About us</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Product</a>
+                        </li>
+                        <li>
+                            <a href="#">Recipe</a>
+                        </li>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="col-lg-3 mb-3">
+                <div class="foot__menulinks">
+                    <span class="foot__menuttl foot__nav__head">
+                        Resources
+                    </span>
+                    <ul>
+                        <li>
+                            <a href="#">News & Events</a>
+                        </li>
+                        <li>
+                            <a href="#">Media Coverage</a>
+                        </li>
+                        <li>
+                            <a href="#">Events/Campaign</a>
+                        </li>
+                        <li>
+                            <a href="#">National Recipes</a>
+                        </li>
+                        <li>
+                            <a href="#">InterNational Recipes</a>
+                        </li>
+                        <li>
+                            <a href="#">Videos</a>
+                        </li>
+                        <li>
+                            <a href="#">FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="copy__foot">
+                    <p>Copyright 2019 The Himalayan Rabbit Farm. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'js/jquery_min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/masonry.min.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+{% block scripts %}
+{% endblock %}

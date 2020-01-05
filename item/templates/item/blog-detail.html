@@ -1,0 +1,97 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="detail__news_and__blog pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="blog__thumb__and__content">
+					<div class="blog__detail__img">
+						<img src="{{ blog_info.image.url }}" alt="">
+					</div>
+					<div class="blog__detail__content__container">
+						<div class="detail__blog__news__release__date">
+							<span class="published__year__time__blog">Publish on: {{ blog_info.date }}</span>
+							<span>{{ blog_info.category }}</span>
+						</div>
+						<div class="news__detail__parag">
+							<h5>{{ blog_info.title }}</h5>
+							<p>{{ blog_info.description|linebreaks }}</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="recent__post__abt__rabt">
+					<div class="blgs__sidebar">
+						<h6>Recent Post</h6>
+					</div>
+					<div class="wrapper__post__blog">
+						<ul>
+							{% for item in recent %}
+							<li>
+								<a href="{% url 'item:blog-detail' item.pk %}">
+									<div class="news__sidebar__post">
+										<img src="{{ item.image.url }}" alt="">
+									</div>
+									<div class="post__content__sidebar">
+										<span>{{ item.category }}</span>
+										<h6>{{ item.title }}</h6>
+										<div class="news__post__date">
+											<span>Published on: {{ item.date }}</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							{% endfor %}
+							<!-- <li>
+								<a href="#">
+									<div class="news__sidebar__post">
+										<img src="{% static 'images/blog__news.jpg' %}" alt="">
+									</div>
+									<div class="post__content__sidebar">
+										<span>News</span>
+										<h6>Rabbit Distribution at Kagate Gaun</h6>
+										<div class="news__post__date">
+											<span>Published on: 11/12019</span>
+										</div>
+									</div>
+								</a>
+							</li> -->
+							<!-- <li>
+								<a href="#">
+									<div class="news__sidebar__post">
+										<img src="{% static 'images/blog__news.jpg' %}" alt="">
+									</div>
+									<div class="post__content__sidebar">
+										<span>News</span>
+										<h6>Rabbit Distribution at Kagate Gaun</h6>
+										<div class="news__post__date">
+											<span>Published on: 11/12019</span>
+										</div>
+									</div>
+								</a>
+							</li> -->
+							<!-- <li>
+								<a href="#">
+									<div class="news__sidebar__post">
+										<img src="{% static 'images/blog__news.jpg' %}" alt="">
+									</div>
+									<div class="post__content__sidebar">
+										<span>News</span>
+										<h6>Rabbit Distribution at Kagate Gaun</h6>
+										<div class="news__post__date">
+											<span>Published on: 11/12019</span>
+										</div>
+									</div>
+								</a>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

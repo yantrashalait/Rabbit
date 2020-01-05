@@ -1,0 +1,73 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="rabbit__recipes pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 mx-auto">
+			        <div class="section__heading text-center recipies__content__abt__rabbit">
+			            <h2>Delicious Recipes</h2>
+			            <p>The company is looking for interested rabbit breeders, meat producers, <br>fresh houses, meat marts</p>
+			        </div>
+			    </div>
+		</div>
+	</div>
+</section>
+<section class="recipes__and__thumb__rabbit pd__btm">
+	<div class="container">
+		<div class="row recipes__pd-btm">
+			{% for item in recipe %}
+			<div class="col-md-3 ">
+				    <div class="blog__listshm__holder recipies__border__wrapper">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="{% url 'item:recipe-detail' item.pk %}">
+				                    <img src="{% static 'images/blog01.jpg' %}" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc recipes__content__items__box">
+				                <div class="blog__desc recipes__wrapper__box">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="{% url 'item:recipe-detail' item.pk %}">{{ item.recipe_name }}</a></h3>
+				                        <p>{{ item.description }}</p>
+				                    </div>
+				                    <div class="blog__detail__link recipes__content__view__detail__btn">
+				                        <a href="{% url 'item:recipe-detail' item.pk %}" class="view__detail__recipes">View Details </a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="row recipes__pd-btm-top">
+			{% if is_paginated %}
+			<div class="col-md-12">
+				<div class="bottom__pagination ">
+					<ul class="pagination">
+						{% if page_obj.has_previous %}
+						<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+						{% endif %}
+						{% for i in paginator.page_range %}
+                            {% if page_obj.number == i %}
+							<li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+							{% else %}
+							<li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+							{% endif %}
+						{% endfor %}
+						{% if page_obj.has_next %}
+						<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+						{% endif %}
+					  </ul>
+				</div>
+			</div>
+			{% endif %}
+		</div>
+</section>
+{% endblock %}
+{% block scripts %}
+	<script>
+		$("#recipe").addClass('active');
+	</script>
+{% endblock %}

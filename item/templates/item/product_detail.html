@@ -1,0 +1,107 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="product__detail pd__btm">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+			    <div class="pdetails-images">
+			        <div class="pdetails-largeimages pdetails-imagezoom">
+						{% for image in product.product_category.all %}
+						{% if image.big_image %}
+			            <div class="pdetails-singleimage" data-src="{{ image.big_image.url }}">
+							<img src="{{ image.big_image.url }}" alt="product image">
+							<div class="pd_zoom_icn">
+								<i class="fa fa-arrows-alt" aria-hidden="true"></i>
+							</div>
+						</div>
+						{% endif %}
+						{% endfor %}
+			            <!-- <div class="pdetails-singleimage" data-src="images/product/lg/product-image-2.jpg">
+			                <img src="{% static 'images/product/lg/product-image-2.jpg' %}" alt="product image8">
+			            </div>
+			            <div class="pdetails-singleimage" data-src="images/product/lg/product-image-3.jpg">
+			                <img src="{% static 'images/product/lg/product-image-3.jpg' %}" alt="product image">
+			            </div>
+			            <div class="pdetails-singleimage" data-src="images/product/lg/product-image-4.jpg">
+			                <img src="{% static 'images/product/lg/product-image-4.jpg' %}" alt="product image">
+			            </div>
+			            <div class="pdetails-singleimage" data-src="images/product/lg/product-image-1.jpg">
+			                <img src="{% static 'images/product/lg/product-image-1.jpg' %}" alt="product image">
+			            </div>
+			            <div class="pdetails-singleimage" data-src="images/product/lg/product-image-2.jpg">
+			                <img src="{% static 'images/product/lg/product-image-2.jpg' %}" alt="product image">
+			            </div>
+			            <div class="pdetails-singleimage" data-src="images/product/lg/product-image-3.jpg">
+			                <img src="{% static 'images/product/lg/product-image-3.jpg' %}" alt="product image">
+			            </div>
+			            <div class="pdetails-singleimage" data-src="images/product/lg/product-image-4.jpg">
+			                <img src="{% static 'images/product/lg/product-image-4.jpg' %}" alt="product image">
+			            </div> -->
+			        </div>
+			        <div class="pdetails-thumbs">
+						{% for image in product.product_category.all %}
+						{% if image.thumbnail_image %}
+			            <div class="pdetails-singlethumb">
+			                <img src="{{ image.thumbnail_image.url }}" alt="product thumb">
+						</div>
+						{% endif %}
+						{% endfor %}
+			            <!-- <div class="pdetails-singlethumb">
+			                <img src="{% static 'images/product/thumbnail/product-image-2.jpg' %}" alt="product thumb">
+			            </div>
+			            <div class="pdetails-singlethumb">
+			                <img src="{% static 'images/product/thumbnail/product-image-3.jpg' %}" alt="product thumb">
+			            </div>
+			            <div class="pdetails-singlethumb">
+			                <img src="{% static 'images/product/thumbnail/product-image-4.jpg' %}" alt="product thumb">
+			            </div>
+			            <div class="pdetails-singlethumb">
+			                <img src="{% static 'images/product/thumbnail/product-image-1.jpg' %}" alt="product thumb">
+			            </div>
+			            <div class="pdetails-singlethumb">
+			                <img src="{% static 'images/product/thumbnail/product-image-2.jpg' %}" alt="product thumb">
+			            </div>
+			            <div class="pdetails-singlethumb">
+			                <img src="{% static 'images/product/thumbnail/product-image-3.jpg' %}" alt="product thumb">
+			            </div>
+			            <div class="pdetails-singlethumb">
+			                <img src="{% static 'images/product/thumbnail/product-image-4.jpg' %}" alt="product thumb">
+			            </div> -->
+			        </div>
+			    </div>
+			</div>
+			<div class="col-md-7">
+				<div class="detail__content__abt__product">
+					<div class="product__detail_name">
+						<h5>{{ product.title }}</h5>
+						<span>{{ product.category.name }}</span>
+					</div>
+					<div class="product__detail_name">
+						<h6>Rs. {{ product.price }} per piece</h6>
+						<p>{{ product.description }}</p>
+						<div class="product__order__btn">
+							<button>Order Now</button>
+						</div>
+					</div>
+					{% for item in product.detail_product.all %}
+					<div class="product__detail_name">
+						<h6>{{ item.title }}</h6>
+						<p>{{ item.description }}</p>
+					</div>
+					{% endfor %}
+					<!-- <div class="product__detail_name">
+						<h6>What to feed</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Provident similique ratione labore ducimus sunt omnis impedit officia excepturi quis, at deserunt, perferendis beatae earum </p>
+					</div> -->
+					<!-- <div class="product__detail_name">
+						<h6>Where to farm</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Provident similique ratione labore ducimus sunt omnis impedit officia excepturi quis, at deserunt, perferendis beatae earum </p>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+

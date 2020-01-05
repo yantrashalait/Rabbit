@@ -1,0 +1,293 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="rabbit__recipes pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 mx-auto">
+			        <div class="section__heading text-center recipies__content__abt__rabbit">
+			            <h2>Buy anything related to rabbit</h2>
+			            <p>Online learning offers a new way to explore subjects you’re passionate about.</p>
+		            	<p>Find your interests by browsing our online course categories:</p>
+
+		            	<div class="anything__relt__to__rabbit">
+							{% for item in category %}
+		            		<div class="shp-det-lnk">
+		            			<a href="{% url 'item:product-category' item.pk %}">{{ item.name }}</a>
+							</div>
+							{% endfor %}
+		            	</div>
+			        </div>
+			    </div>
+		</div>
+	</div>
+</section>
+<section class="recipes__and__thumb__rabbit pd__btm">
+	<div class="container">
+		<div class="row recipes__pd-btm">
+			{% for item in list %}
+			<div class="col-md-3 ">
+				    <div class="blog__listshm__holder recipies__border__wrapper">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="{% url 'item:product-detail' item.pk %}">
+				                    <img src="{{ item.image.url }}" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc recipes__content__items__box">
+				                <div class="blog__desc recipes__wrapper__box">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="{% url 'item:product-detail' item.pk %}">{{ item.title }}</a></h3>
+				                        <p>{{ item.description }}</p>
+
+				                        <div class="rabbit__type__and__price">
+											{% if item.gender %}
+											<span>{{ item.gender }}</span>
+											{% endif %}
+					                    	<span class="prc__per__piece">Rs.<strong>{{ item.price }}</strong> per {{ item.unit }}</span>
+				                   		 </div>
+				                    </div>
+				                    <div class="blog__detail__link recipes__content__view__detail__btn">
+				                        <a href="{% url 'item:product-detail' item.pk %}" class="view__detail__recipes">View Details </a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+			</div>
+			{% endfor %}
+			<!-- <div class="col-md-3 ">
+				    <div class="blog__listshm__holder recipies__border__wrapper">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="#">
+				                    <img src="images/blog01.jpg" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc recipes__content__items__box">
+				                <div class="blog__desc recipes__wrapper__box">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="#">Lionhead Rabbit</a></h3>
+				                        <p>Online learning offers a new way to explore subjects you’re ...</p>
+
+				                        <div class="rabbit__type__and__price">
+					                    	<span>Male</span>
+					                    	<span class="prc__per__piece">Rs.<strong>500</strong> per piece</span>
+				                   		 </div>
+				                    </div>
+				                    <div class="blog__detail__link recipes__content__view__detail__btn">
+				                        <a href="#" class="view__detail__recipes">View Details </a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+			</div> -->
+			<!-- <div class="col-md-3 ">
+				    <div class="blog__listshm__holder recipies__border__wrapper">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="#">
+				                    <img src="images/blog01.jpg" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc recipes__content__items__box">
+				                <div class="blog__desc recipes__wrapper__box">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="#">Lionhead Rabbit</a></h3>
+				                        <p>Online learning offers a new way to explore subjects you’re ...</p>
+
+				                        <div class="rabbit__type__and__price">
+					                    	<span>Male</span>
+					                    	<span class="prc__per__piece">Rs.<strong>500</strong> per piece</span>
+				                   		 </div>
+				                    </div>
+				                    <div class="blog__detail__link recipes__content__view__detail__btn">
+				                        <a href="#" class="view__detail__recipes">View Details </a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+			</div> -->
+			<!-- <div class="col-md-3 ">
+				    <div class="blog__listshm__holder recipies__border__wrapper">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="#">
+				                    <img src="images/blog01.jpg" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc recipes__content__items__box">
+				                <div class="blog__desc recipes__wrapper__box">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="#">Lionhead Rabbit</a></h3>
+				                        <p>Online learning offers a new way to explore subjects you’re ...</p>
+
+				                        <div class="rabbit__type__and__price">
+					                    	<span>Male</span>
+					                    	<span class="prc__per__piece">Rs.<strong>500</strong> per piece</span>
+				                   		 </div>
+				                    </div>
+				                    <div class="blog__detail__link recipes__content__view__detail__btn">
+				                        <a href="#" class="view__detail__recipes">View Details </a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+			</div> -->
+		</div>
+		<!-- <div class="row recipes__pd-btm">
+			<div class="col-md-3 ">
+				    <div class="blog__listshm__holder recipies__border__wrapper">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="#">
+				                    <img src="images/blog01.jpg" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc recipes__content__items__box">
+				                <div class="blog__desc recipes__wrapper__box">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="#">Lionhead Rabbit</a></h3>
+				                        <p>Online learning offers a new way to explore subjects you’re ...</p>
+
+				                        <div class="rabbit__type__and__price">
+					                    	<span>Male</span>
+					                    	<span class="prc__per__piece">Rs.<strong>500</strong> per piece</span>
+				                   		 </div>
+				                    </div>
+				                    <div class="blog__detail__link recipes__content__view__detail__btn">
+				                        <a href="#" class="view__detail__recipes">View Details </a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+			</div>
+			<div class="col-md-3 ">
+				    <div class="blog__listshm__holder recipies__border__wrapper">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="#">
+				                    <img src="images/blog01.jpg" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc recipes__content__items__box">
+				                <div class="blog__desc recipes__wrapper__box">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="#">Lionhead Rabbit</a></h3>
+				                        <p>Online learning offers a new way to explore subjects you’re ...</p>
+
+				                        <div class="rabbit__type__and__price">
+					                    	<span>Male</span>
+					                    	<span class="prc__per__piece">Rs.<strong>500</strong> per piece</span>
+				                   		 </div>
+				                    </div>
+				                    <div class="blog__detail__link recipes__content__view__detail__btn">
+				                        <a href="#" class="view__detail__recipes">View Details </a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+			</div>
+			<div class="col-md-3 ">
+				    <div class="blog__listshm__holder recipies__border__wrapper">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="#">
+				                    <img src="images/blog01.jpg" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc recipes__content__items__box">
+				                <div class="blog__desc recipes__wrapper__box">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="#">Lionhead Rabbit</a></h3>
+				                        <p>Online learning offers a new way to explore subjects you’re ...</p>
+
+				                        <div class="rabbit__type__and__price">
+					                    	<span>Male</span>
+					                    	<span class="prc__per__piece">Rs.<strong>500</strong> per piece</span>
+				                   		 </div>
+				                    </div>
+				                    <div class="blog__detail__link recipes__content__view__detail__btn">
+				                        <a href="#" class="view__detail__recipes">View Details </a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+			</div>
+			<div class="col-md-3 ">
+				    <div class="blog__listshm__holder recipies__border__wrapper">
+				        <div class="blog__listshm">
+				            <div class="blog__thum">
+				                <a href="#">
+				                    <img src="images/blog01.jpg" alt="">
+				                </a>
+				            </div>
+				            <div class="blog__meta__desc recipes__content__items__box">
+				                <div class="blog__desc recipes__wrapper__box">
+				                    <div class="blog__desc__cont">
+				                        <h3><a href="#">Lionhead Rabbit</a></h3>
+				                        <p>Online learning offers a new way to explore subjects you’re ...</p>
+
+				                        <div class="rabbit__type__and__price">
+					                    	<span>Male</span>
+					                    	<span class="prc__per__piece">Rs.<strong>500</strong> per piece</span>
+				                   		 </div>
+				                    </div>
+				                    <div class="blog__detail__link recipes__content__view__detail__btn">
+				                        <a href="#" class="view__detail__recipes">View Details </a>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+			</div>
+		</div> -->
+		<!-- <div class="row recipes__pd-btm-top">
+			<div class="col-md-12">
+				<div class="bottom__pagination ">
+					<ul class="pagination">
+					    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+					    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+					    <li class="page-item"><a class="page-link" href="#">2</a></li>
+					    <li class="page-item"><a class="page-link" href="#">3</a></li>
+					    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+					  </ul>
+				</div>
+			</div>
+		</div> -->
+		<div class="row recipes__pd-btm-top">
+			{% if is_paginated %}
+			<div class="col-md-12">
+				<div class="bottom__pagination ">
+					<ul class="pagination">
+						{% if page_obj.has_previous %}
+						<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+						{% endif %}
+						{% for i in paginator.page_range %}
+                            {% if page_obj.number == i %}
+							<li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+							{% else %}
+							<li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+							{% endif %}
+						{% endfor %}
+						{% if page_obj.has_next %}
+						<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+						{% endif %}
+					  </ul>
+				</div>
+			</div>
+			{% endif %}
+		</div>
+</section>
+{% endblock %}
+{% block scripts %}
+	<script>
+		$("#product").addClass('active');
+	</script>
+{% endblock %}

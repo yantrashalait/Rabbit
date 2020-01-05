@@ -1,0 +1,71 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="shop_meat pd__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 mx-auto">
+			        <div class="section__heading text-center order__thrg__email">
+			            <h2>Email us your order from the form below</h2>
+			            <p>Online learning offers a new way to explore subjects you’re passionate about.</p>
+							<p>Find your interests by browsing our online course categories:</p>
+			        </div>
+			    </div>
+		</div>
+	</div>
+</section>
+<section class="order__detail pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 mx-auto">
+				<div class="order__form">
+					<h5>Your order detail</h5>
+					<form method="POST" action="">
+						{% csrf_token %}
+						<div class="form-group">
+						    <label class="input__name">Product Name</label>
+						    <input name="product_name" type="text" class="form-control order__detail__input" placeholder="Enter Product Name" required>
+						  </div>
+						  <div class="form-group">
+						    <label class="input__name">Email Address</label>
+						    <input name="email" type="email" class="form-control order__detail__input" placeholder="Enter Email" required>
+						  </div>
+						  <div class="form-group">
+						    <label class="input__name">Phone Number</label>
+						    <input name="phone_number" type="text" class="form-control order__detail__input" placeholder="Enter Phone Number" required>
+						  </div>
+						  <div class="form-group">
+						    <label class="input__name">Quality</label>
+						    <select name="quantity" class="form-control order__detail__input">
+						      <option>1kg</option>
+						      <option>2kg</option>
+						      <option>3kg</option>
+						      <option>4kg</option>
+						      <option>5kg</option>
+						    </select>
+						  </div>
+						  <div class="form-group">
+						    <label class="input__name">Address</label>
+						    <input name="address" type="text" class="form-control order__detail__input" placeholder="Enter Address" required>
+						  </div>
+						   <div class="form-group">
+							    <label class="input__name">Special Notes</label>
+							    <textarea name="note" class="form-control order__detail__input" rows="3" required></textarea>
+						  </div>
+						  <div class="email__form__btn">
+						  	<button type="submit" class="btn order__detail__btn">Order Now</button>
+						  </div>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block scripts %}
+	<script>
+		$("#shop").addClass('active');
+	</script>
+{% endblock %}
+

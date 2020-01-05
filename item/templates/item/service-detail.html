@@ -1,0 +1,124 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="service__in__detail__rabt">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="top__bgr__banner__srvs">
+					<div class="top__bgr__banner__srvs__content">
+						<img src="{% static 'images/serv-det-ban.jpg' %}" alt="">
+						<div class="serv__ban__txt text-center">
+							<div class="section__heading wht__heading no__padding__heading">
+								<h1>{{ detail.title }}</h1>
+							</div>
+							<div class="serv_ban_para">
+								<p>{{ detail.description }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row align-items-center btm__line__breaker">
+			{% for item in service_detail %}
+				<div class="col-md-4">
+					<div class="rabbit__service__type">
+						<div class="service__icon__type">
+							<div class="service__title">
+							<img src="{{ item.icon.url }}" alt="">	
+							  <h6>{{ item.title }}</h6>
+						   </div>
+						</div>
+						<div class="service__content">
+							<p>
+								{{ item.description }}
+							</p>
+						</div>
+						<!-- <div class="service__more__detail">
+							<a href="#">More in detail</a>
+						</div> -->
+					</div>
+				</div>
+				{% endfor %}
+				
+		</div>
+		<div class="row pd__btm__tp">
+			<div class="col-lg-7 mx-auto text-center">
+					<div class="section__heading">
+						<h1>Our Offerings are Completely organized an interactive session</h1>
+						<div class="contain__about__rabt__offer__as__srvs">
+							<p>The mission of WorldQuant University is to make advanced, quality education accessible to capable students everywhere by leveraging technology at scale to deliver entirely online, tuition-free programs.</p>
+							 <p>Education is most effective when educators, employers, and students work together to create pathways for mutual success. Technology makes advanced learning locally available across geographies and enhances outcomes by connecting capable candidates and prospective employers.</p>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</section>
+<section class="learn__finance pd__btm">
+	<div class="container">
+		<div class="row brg__banner__finance">
+			<div class="col-md-10 brg__content__finance mx-auto">
+				<div class="abt__science__engeer text-center">
+					{% for item in event %}
+					<div class="detls__content__engeering">
+						<h4>{{ item.name }}</h4>
+						<div class="image__finance__enger">
+							<img src="{{ item.image.url }}" alt="">
+							<div class="finance__paragr">
+							<P>{{ item.description }}</P>
+							</div>
+						</div>
+						<div class="learn__more__finance">
+							<p>{{ item.slogan }}</p>
+							<button>Learn more about this</button>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="rabbit__available__packages pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 mx-auto">
+			        <div class="packages__for__rbt text-center">
+			            <h2>Explore our services</h2>
+			            <p>Online learning offers a new way to explore subjects you’re passionate about.</p>
+			            	<p>Find your interests by browsing our online course categories:</p>
+			        </div>
+			    </div>
+		</div>
+		<div class="row packages__plan__pd">
+			{% for item in package %}
+			<div class="col-md-4">
+				
+				<div class="plans__and__enquery">
+					<div class="package__plan__numb">
+						<span>{{ forloop.counter }}</span>
+					</div>
+					<div class="plan__and__rupes">
+						<h5>{{ item.package_name }} / <span>{{ item.price }}</span></h5>
+					</div>
+					<div class="types__of__package__plan">
+						<ul>
+							{% for obj in item.package.all %}
+							<li><span><i class="fa fa-check-square" aria-hidden="true"></i></span>{{ obj.service }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="plan__type__btn">
+						<a href="#">Enquery Now</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			
+
+		</div>
+	</div>
+</section>
+{% endblock %}

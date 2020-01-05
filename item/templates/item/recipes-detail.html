@@ -1,0 +1,32 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="recipe__detail pd__btm">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="thumbnail__of__detail_recp">
+					<img src="{{ recipe_info.image.url }}" alt="">
+				</div>
+			</div>
+			<div class="col-md-6 bg__content__col">
+				<div class="detail__content__of__recp">
+					<h3>{{ recipe_info.recipe_name }}</h3>
+					<div class="ingredients__rabbit">
+						<h6>Ingredients</h6>
+						<ul>
+								<li>{{ recipe_info.ingredients|linebreaks }}</li>
+						</ul>
+					</div>
+					<div class="recep__preparation__manual"> 
+						<h6>Receipe Preparation</h6>
+
+						<p>{{ recipe_info.recipe_preparation|linebreaks }}</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

@@ -1,0 +1,256 @@
+
+
+
+h1,
+h2, 
+h3, 
+h4, 
+h5, 
+h6,
+.farm__slogan,
+.comp__dur__time{
+font-family: 'Playfair Display', serif;
+}
+
+
+h1,
+h2{
+	font-weight: 700;
+}
+
+h1,
+h2, 
+h3, 
+h4, 
+h5, 
+h6,
+.blog__desc__cont h3 a,
+.blog__detail__link a{
+	color: #000;
+}
+
+
+
+.link__with__top__margin{
+    margin: 1.3rem 0 0 0;
+}
+
+.link__with__top__margin .fa{
+	margin: 0 0 0 10px;
+}
+
+.multi__para__bx p{
+	margin: 0 0 1rem 0;
+}
+
+/* for gradient bg */
+
+.overlay__foot,
+.offers__bx:before{
+	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));
+}
+
+/* for gradient bg */
+
+.org__clr {
+	color: #ef8e2f;
+}
+
+
+.participation__lists a:hover{
+	background: #ef8e2f;
+}
+
+
+
+/* for white color */
+
+.comp__dur__time,
+.wht__link a,
+.wht__heading, 
+.wht__heading h1, 
+.wht__heading h2,
+.wht__heading h3,
+.yellers__story__hldr,
+.yellers__story__hldr .section__heading h3{
+	color: #fff;
+}
+
+/* for white color */
+
+
+/* for site bg color */
+
+.comp__dur__time__holder,
+.hm__what__we__offer:before,
+.participation__lists,
+.success__stor__yelled:before,
+.main__footer,
+.rabbit__achievement,
+.wht__people___say,
+.rabbit__recipes,
+.shop_meat,
+.contact__us:before,
+.rabbit__services,
+.brg__banner__finance{
+	background: #323b94;
+}
+
+/* for site bg color */
+
+
+
+
+.blog__desc__cont h3 {
+    font-size: 1.2rem;
+}
+
+/*css for common padding sections*/
+
+.pd__tp{
+    padding: 4rem 0 0 0;
+}
+
+.pd__btm__tp{
+    padding: 4rem 0;
+}
+
+.pd__btm{
+	padding: 0 0 4rem 0;
+}
+
+/*css for common padding sections*/
+
+
+
+/* css for section heading */
+
+.no__padding__heading{
+	margin: 0 !important;
+}
+
+.section__heading{
+	margin: 0 0 4rem 0;
+}
+
+.section__heading h1{
+	margin: 0 0 1.9rem 0;
+}
+
+.section__heading h2{
+	margin: 0 0 1.9rem 0;
+}
+
+.section__heading h3{
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+}
+
+
+.section__heading .section__title{    
+	display: inline-flex;
+	margin: 0 0 1.4rem 0;
+}
+
+.section__heading p{
+
+}
+
+
+.small__sec__heading{
+	margin: 0 0 2rem 0;
+}
+
+.small__sec__heading h3{
+     margin: 0 0 1.5rem 0;
+}
+
+.small__sec__heading p{
+
+}
+
+
+
+
+/* css for section heading */
+.owl-theme .owl-nav [class*='owl-']{
+	margin: 0 !important;
+}
+.owl-theme .owl-nav [class*='owl-']:hover{
+	background: none !important;
+}
+
+
+
+.rabbit__footage__slider .owl-nav{
+    margin: 0 0 0 12.6% !important;
+}
+
+.rabbit__footage__slider .owl-prev i{
+    background: #ef8e2f;    
+    padding: 10px 20px 10px 30px;
+    color: #fff;    
+    font-size: 1.6rem;
+}
+
+
+.rabbit__footage__slider .owl-next i{
+    background: #ef8e2f;    
+    padding: 10px 30px 10px 20px;
+    color: #fff;    
+    font-size: 1.6rem;
+}
+
+
+.rabbit__footage__slider .owl-nav button.owl-prev{
+    position: relative;
+}
+
+.rabbit__footage__slider .owl-nav button.owl-prev:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 30%;
+    background: #fff;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+
+
+.story__yeller__caro .owl-nav{
+    margin: 50px 0 0 37% !important;
+}
+
+.story__yeller__caro .owl-prev i{
+    background: #ef8e2f;    
+    padding: 10px 20px 10px 30px;
+    color: #fff;    
+    font-size: 1.6rem;
+}
+
+
+.story__yeller__caro .owl-next i{
+    background: #ef8e2f;    
+    padding: 10px 30px 10px 20px;
+    color: #fff;    
+    font-size: 1.6rem;
+}
+
+
+.story__yeller__caro .owl-nav button.owl-prev{
+    position: relative;
+}
+
+.story__yeller__caro .owl-nav button.owl-prev:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 30%;
+    background: #fff;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
