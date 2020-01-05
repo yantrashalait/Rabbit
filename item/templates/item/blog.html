@@ -14,58 +14,39 @@
 		</div>
 		
 		<div class="row blog__tp_pd">
-			{% for item in blog %}
-			<div class="col-md-4">
-				<div class="news__and__thumb__rabbit">
-				   <div class="blog__thum">
-				       <a href="{% url 'item:blog-detail' item.pk %}">
-				          <img src="{{ item.image.url }}" alt="">
-				       </a>
-				    </div>
-				      <div class="blog__meta__desc">
-				      	<div class="blog__publish__date">
-				        		<span>Published on: {{ item.date }}</span>
-				        		<span>{{ item.category }}</span>
-				        </div>
-				        <div class="blog__desc blog__wrapper__box">
-				        	<div class="blog__content__rabbit">
-				                <h5><a href="{% url 'item:blog-detail' item.pk %}">{{ item.title }}</a></h5>
-				                <p>{{ item.description|truncatechars:100 }}</p>
+			
+			<div class="col-md-8">
+			<div class="row">
+				{% for item in list %}
+				<div class="col-md-6 pb-5">
+					<div class="news__and__thumb__rabbit">
+					<div class="blog__thum">
+						<a href="{% url 'item:blog-detail' item.pk %}">
+							<img src="{{ item.image.url }}" alt="">
+						</a>
+					</div>
+				  		<div class="blog__meta__desc">
+							<div class="blog__publish__date">
+									<span>Published on: {{ item.date }}</span>
+									<span>{{ item.category }}</span>
+							</div>
+							<div class="blog__desc blog__wrapper__box">
+								<div class="blog__content__rabbit">
+									<h5><a href="{% url 'item:blog-detail' item.pk %}">{{ item.title }}</a></h5>
+									<p>{{ item.description|truncatechars:100 }}</p>
 
-				             </div>
-				             <div class="blog__btn">
-				                 <a href="{% url 'item:blog-detail' item.pk %}">More in detail </a>
-				             </div>
-				         </div>
-				     </div>
+								</div>
+								<div class="blog__btn">
+									<a href="{% url 'item:blog-detail' item.pk %}">More in detail </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
 				</div>
 			</div>
-			{% endfor %}
-			<!-- <div class="col-md-4">
-				<div class="news__and__thumb__rabbit">
-				   <div class="blog__thum">
-				       <a href="#">
-				          <img src="{% static 'images/blog01.jpg' %}" alt="">
-				       </a>
-				    </div>
-				      <div class="blog__meta__desc">
-				      	<div class="blog__publish__date">
-				        		<span>Published on: 11/1/2019</span>
-				        		<span>News</span>
-				        </div>
-				        <div class="blog__desc blog__wrapper__box">
-				        	<div class="blog__content__rabbit">
-				                <h5><a href="#">Rabbit Farming in Nepal</a></h5>
-				                <p>Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs</p>
-
-				             </div>
-				             <div class="blog__btn">
-				                 <a href="#">More in detail </a>
-				             </div>
-				         </div>
-				     </div>
-				</div>
-			</div> -->
+			
 			<div class="col-md-4 blog__container__sidebar">
 				<div class="recent__post__abt__rabt">
 					<div class="blgs__sidebar">
@@ -89,107 +70,13 @@
 								</a>
 							</li>
 							{% endfor %}
-							<!-- <li>
-								<a href="#">
-									<div class="news__sidebar__post">
-										<img src="{% static 'images/blog__news.jpg' %}" alt="">
-									</div>
-									<div class="post__content__sidebar">
-										<span>News</span>
-										<h6>Rabbit Distribution at Kagate Gaun</h6>
-										<div class="news__post__date">
-											<span>Published on: 11/12019</span>
-										</div>
-									</div>
-								</a>
-							</li> -->
-							<!-- <li>
-								<a href="#">
-									<div class="news__sidebar__post">
-										<img src="{% static 'images/blog__news.jpg' %}" alt="">
-									</div>
-									<div class="post__content__sidebar">
-										<span>News</span>
-										<h6>Rabbit Distribution at Kagate Gaun</h6>
-										<div class="news__post__date">
-											<span>Published on: 11/12019</span>
-										</div>
-									</div>
-								</a>
-							</li> -->
-							<!-- <li>
-								<a href="#">
-									<div class="news__sidebar__post">
-										<img src="{% static 'images/blog__news.jpg' %}" alt="">
-									</div>
-									<div class="post__content__sidebar">
-										<span>News</span>
-										<h6>Rabbit Distribution at Kagate Gaun</h6>
-										<div class="news__post__date">
-											<span>Published on: 11/12019</span>
-										</div>
-									</div>
-								</a>
-							</li> -->
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-		 <!-- <div class="row blog__tp_pd"> 
-			<div class="col-md-4">
-				<div class="news__and__thumb__rabbit">
-				   <div class="blog__thum">
-				       <a href="#">
-				          <img src="{% static 'images/blog01.jpg' %}" alt="">
-				       </a>
-				    </div>
-				      <div class="blog__meta__desc">
-				      	<div class="blog__publish__date">
-				        		<span>Published on: 11/1/2019</span>
-				        		<span>News</span>
-				        </div>
-				        <div class="blog__desc blog__wrapper__box">
-				        	<div class="blog__content__rabbit">
-				                <h5><a href="#">Rabbit Distribution at Kagate Gaun</a></h5>
-				                <p>Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs</p>
 
-				             </div>
-				             <div class="blog__btn">
-				                 <a href="#">More in detail </a>
-				             </div>
-				         </div>
-				     </div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="news__and__thumb__rabbit">
-				   <div class="blog__thum">
-				       <a href="#">
-				          <img src="{% static 'images/blog01.jpg' %}" alt="">
-				       </a>
-				    </div>
-				      <div class="blog__meta__desc">
-				      	<div class="blog__publish__date">
-				        		<span>Published on: 11/1/2019</span>
-				        		<span>News</span>
-				        </div>
-				        <div class="blog__desc blog__wrapper__box">
-				        	<div class="blog__content__rabbit">
-				                <h5><a href="#">Rabbit Farming in Nepal</a></h5>
-				                <p>Realizing and appreciating the need to make education more effective, purposeful and productive, IMI Nepal has been founded by a group of dynamic entrepreneurs</p>
-
-				             </div>
-				             <div class="blog__btn">
-				                 <a href="#">More in detail </a>
-				             </div>
-				         </div>
-				     </div>
-				</div>
-			</div>
-		</div>   -->
-
-		<div class="row recipes__pd-btm-top mg__btm__news__blog">
+		<!-- <div class="row recipes__pd-btm-top mg__btm__news__blog">
 			<div class="col-md-12">
 				<div class="bottom__pagination ">
 					<ul class="pagination">
@@ -201,8 +88,32 @@
 					  </ul>
 				</div> 
 			</div>
-		</div> 
+		</div>  -->
 		
+		<div class="row recipes__pd-btm-top">
+			{% if is_paginated %}
+			<div class="col-md-12">
+				<div class="bottom__pagination ">
+					<ul class="pagination">
+						{% if page_obj.has_previous %}
+						<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+						{% endif %}
+						{% for i in paginator.page_range %}
+                            {% if page_obj.number == i %}
+							<li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+							{% else %}
+							<li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+							{% endif %}
+						{% endfor %}
+						{% if page_obj.has_next %}
+						<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+						{% endif %}
+					  </ul>
+				</div>
+			</div>
+			{% endif %}
+		</div>
+
 	</div> 
 </section>
 {% endblock %}

@@ -129,14 +129,19 @@ class Shop(TemplateView):
 
         return HttpResponseRedirect('/') 
 
-class BlogPage(TemplateView):
+class BlogPage(ListView):
     template_name = 'item/blog.html'
+    model = Blog
+    paginate_by = 2
+    context_object_name = "list"
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['blog'] = Blog.objects.all()
-        context['recent'] = Blog.objects.all().order_by('-date')
+        context['recent'] = Blog.objects.all().order_by('-date')[:4]
         return context
+    
+    def get_queryset(self):
+        return Blog.objects.all()
 
 class BlogDetail(DetailView):
     template_name = 'item/blog-detail.html'
