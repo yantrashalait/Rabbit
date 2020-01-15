@@ -18,6 +18,9 @@
     .location__google__map iframe {
         width: 100%;
     }
+    .video__thumb__outer:before {
+        height: 90%;
+    }
 }
 @media only screen and (max-width: 992px) {
     .prticipation__lists__main {
@@ -30,11 +33,20 @@
         flex: 0 0 100%;
         margin-bottom: 1.5rem;
     }
+    .image__finance__enger {
+        width: 100%;
+    }
+    .wrapper__resposiv__ser__det{
+        flex-wrap: wrap;
+    }
+    .finance__paragr{
+        padding: 0;
+    }
+    .learn__more__finance button {
+        width: 35%;
+    }
     .respsiv__award {
         margin-top: 3rem;
-    }
-    .thumb__and__name__position:before {
-        margin-left: 6rem;
     }
     .post__content__sidebar span {
         font-size: 12px;
@@ -49,21 +61,45 @@
         margin-top: -16.9rem;
     }
     .video__thumb__outer:before {
-        height: 90%;
+        height: 85%;
     }
     .success__stor__yelled:before {
         width: 100%;
+    }
+    .rab__resp__packages{
+        max-width: 50%;
+        flex: none;
+    }
+    .resposiv__about__part{
+        max-width: 50%;
+        flex: none;
+    }
+    .respons__award{
+        max-width: 100%;
+        flex: none;
     }
 }
 @media only screen and (max-width: 425px) {
     .service__content {
         padding: 0;
     }
+    .blog__container__sidebar {
+       position: relative;
+       margin-top: 2rem;
+       right: 0;
+    }
+    .learn__more__finance button {
+        width: 49%;
+    }
+    .rab__resp__packages{
+        max-width: 100%;
+        
+    }
     .contact__us:before {
-        height: 60%;
+        height: 55%;
         width: 50%;
         bottom: 0;
-        top: 40%;
+        top: 45%;
     }
     .serv_ban_para {
         padding: 1rem 0rem 0.7rem 0rem;
@@ -102,7 +138,13 @@
         padding: 0;
     }
     .product__detail:before {
-        top: 39%;
+        top: 42%;
+    }
+    .slick-prev.slick-arrow {
+        left: -15px;
+    }
+    button.slick-next.slick-arrow {
+        right: -15px;
     }
     .shp-det-lnk {
         width: 100%;
@@ -126,6 +168,22 @@
     .home__main__banner:before {
         width: 100%;
     }
+    .bgr__heading__content {
+        color: #fff;
+    }
+    .resposiv__about__part {
+        max-width: 100%;
+    }
+    .farm__slogan p {
+        color: #fff;
+    }
+    .footage___title h2 {
+        font-size: 30px;
+    }
+    .hm__what__we__offer:before {
+        width: 100%;
+        height: 10%;
+    }
 }@media only screen and (max-width: 320px) {
     .section__heading h1 {
         font-size: 1rem;
@@ -142,40 +200,19 @@
     .recipies__content__abt__rabbit {
         padding: 0 0 8rem 0;
     }
-}@media only screen and (max-width: 375px) {
+    .recipes__pd-btm {
+        margin-top: 2.87rem;
+    }
+    
+}
+@media only screen and (max-width: 375px) {
     .recipes__and__thumb__rabbit {
         margin-top: -17.68rem;
     }
-}
-/* contact css
-.contact__social__icon li {
-    font-size: 1.3rem;
-    background: #eee;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    display: inline-block;
-}
-.contact__social__icon a{
-    color: #000!important;
-}
-​
-/*847 855
-​
-.wrapper__email__and__location ul{
-    list-style: none;
-}
-.location__icon__cont {
-    background: #323b94;
-    padding: 0.8rem 1rem;
-    border-radius: 50px;
-    margin-right: 1rem;
+    .image__finance__enger img{
+        width: 100%;
     }
-​
-.location__icon__cont i {
-    color: #fff;
-    font-size: 1rem;
-    display: flex;
+    .learn__more__finance button {
+        width: 56%;
+    }
 }
-​
-*/

@@ -60,17 +60,20 @@
 	<div class="container">
 		<div class="row brg__banner__finance">
 			<div class="col-md-10 brg__content__finance mx-auto">
-				<div class="abt__science__engeer text-center">
+				<div class="abt__science__engeer ">
 					{% for item in event %}
-					<div class="detls__content__engeering">
+					<div class="detls__content__engeering text-center ">
 						<h4>{{ item.name }}</h4>
-						<div class="image__finance__enger">
-							<img src="{{ item.image.url }}" alt="">
-							<div class="finance__paragr">
-							<P>{{ item.description }}</P>
-							</div>
+						<div class="wrapper__resposiv__ser__det">
+								<div class="image__finance__enger mb-4">
+									<img src="{{ item.image.url }}" alt="">
+								</div>
+								<div class="finance__paragr">
+									<P>{{ item.description }}</P>
+								</div>
 						</div>
-						<div class="learn__more__finance">
+						</div>
+						<div class="learn__more__finance text-center">
 							<p>{{ item.slogan }}</p>
 							<button>Learn more about this</button>
 						</div>
@@ -94,7 +97,7 @@
 		</div>
 		<div class="row packages__plan__pd">
 			{% for item in package %}
-			<div class="col-md-4">
+			<div class="col-md-4 mb-4 rab__resp__packages">
 				
 				<div class="plans__and__enquery">
 					<div class="package__plan__numb">

@@ -8,48 +8,50 @@
 				<div class="contact__detail__info">
 					<h3>Get In Touch</h3>
 					<div class="contact__social__icon">
-						<div class="s__icon ">
-							<a href="{{ info.facebook_url }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-						</div>
-						<div class="s__icon ">
-							<a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-						</div>
-						<div class="s__icon ">
-							<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-						</div>
-						<div class="s__icon ">
-							<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-						</div>
+							<ul>
+								<li style="padding:0.6rem 1.2rem;"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></li>	</a>
+								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							</ul>
 					</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, sint dolore ut voluptate, accusantium autem quod.</p>
 					<div class="wrapper__email__and__location">	
-						<div class="location__and__email">
-							<div class="location__icon__cont">
-								<span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+						<ul>
+							<li>
+								<div class="location__and__email">
+									<div class="location__icon__cont"  style="padding: 0.8rem 1.1rem;">
+										<i class="fa fa-map-marker" aria-hidden="true"></i>
+									</div>
+									<div class="location__detail__cont">
+										<p>Our Location</p>
+										<span>Balambu-5, Kathmandu</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="location__and__email">
+									<div class="location__icon__cont">
+										<i class="fa fa-phone" aria-hidden="true"></i>
+									</div>
+									<div class="location__detail__cont">
+										<p>Give us a call</p>
+										<span>+977 9851096182</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="location__and__email">
+								<div class="location__icon__cont">
+									<i class="fa fa-envelope-o" aria-hidden="true"></i>
+								</div>
+								<div class="location__detail__cont">
+									<p>Write us an email</p>
+									<span>info@himalayanrabbitfarm.com</span>
+								</div>
 							</div>
-							<div class="location__detail__cont">
-								<p>Our Location</p>
-								<span>{{ info.location }}</span>
-							</div>
-						</div>
-						<div class="location__and__email">
-							<div class="location__icon__cont">
-								<span><i class="fa fa-phone" aria-hidden="true"></i></span>
-							</div>
-							<div class="location__detail__cont">
-								<p>Give us a call</p>
-								<span>{{ info.contact_number }}</span>
-							</div>
-						</div>
-						<div class="location__and__email">
-							<div class="location__icon__cont">
-								<span class="rabit__msg_addrs"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-							</div>
-							<div class="location__detail__cont">
-								<p>Write us an email</p>
-								<span>{{ info.email }}</span>
-							</div>
-						</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>

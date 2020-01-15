@@ -182,7 +182,6 @@ ul{
     height: 100%;
     top: 0;
 }
-
 .offers__bx{
     position: relative;
 }
@@ -435,14 +434,6 @@ ul{
 .wht__people___say{
     margin-bottom: 4rem;
 }
-.thumb__and__name__position:before{
-    content: '';
-    display: block;
-    width: 50%;
-    height: 1px;
-    background: #eee;
-    margin-left: 10rem;
-}
 .teller__position {
     padding: 1rem 0;
 }
@@ -642,9 +633,9 @@ ul{
 }
 .order__form {
     padding: 2rem;
-    width: 80%;
+    width: 100%;
     border: 1px solid #323b94;
-    margin-left: 4rem;
+    /* margin-left: 4rem; */
 }
 .order__detail__input {
     border: none;
@@ -825,7 +816,7 @@ ul{
 .contact__detail__info p{
     margin: 1.5rem 0;
 }
-.s__icon {
+/* .s__icon {
     width: 9%;
     background: #eee;
     padding: 0.6rem 0.7rem;
@@ -839,7 +830,7 @@ ul{
     color: #000;
     font-size: 20px;
 
-}
+} */
 .contact__social__icon {
     display: flex;
 }
@@ -848,19 +839,19 @@ ul{
     align-items: center;
      margin-bottom: 1.5rem;
 }
-.location__icon__cont {
+/* .location__icon__cont {
     background: #323b94;
     padding: 0.8rem 1rem;
     border-radius: 50px;
     margin-right: 1rem;
     width: 8.4%;
-}
+} */
 
-.location__icon__cont i {
+/* .location__icon__cont i {
     color: #fff;
     margin-left: 2px;
     font-size: 16px;
-}
+} */
 
 .location__detail__cont p{
     margin: 0!important;
@@ -1021,7 +1012,7 @@ ul{
 }
 .plans__and__enquery {
     border: 1px solid #eee;
-    padding: 3rem;
+    padding: 2rem;
 }
 .types__of__package__plan ul li{
     margin-bottom: 0.5rem;
@@ -1081,6 +1072,7 @@ ul{
 }
 
 .serv__ban__txt {
+    width: 85%;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -1095,22 +1087,23 @@ ul{
 .contain__about__rabt__offer__as__srvs p{
     padding-bottom: 2.2rem;
 }
-.image__finance__enger img{
+/* .image__finance__enger img{
     width: 100%;
-    object-fit: contain;
-}
-.finance__paragr {
-    padding-left: 2.5rem;
-}
-.finance__paragr p{
+} */
+/* .finance__paragr p{
     margin-bottom: 2rem;
+} */
+.finance__paragr {
+    padding-left: 1rem;
 }
 .image__finance__enger {
-    display: flex;
-    padding: 0 3rem;
+    width: 50%;
 }
 .detls__content__engeering h4{
     padding: 2rem 0;
+}
+.wrapper__resposiv__ser__det {
+    display: flex;
 }
 .learn__more__finance {
     padding-top: 2rem;
@@ -1191,7 +1184,6 @@ ul{
 }
 
 .foot__nav__head {
-    margin: 0 0 0 2.5rem;
     color: #fff;
     font-size: 1rem;
     font-weight: 500;
@@ -1212,6 +1204,31 @@ footer{
 .frequently__ask__qans{
     padding-bottom: 3rem;
 }
-
-
+.contact__social__icon li {
+    font-size: 1.3rem;
+    background: #eee;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: inline-block;
+}
+.contact__social__icon a{
+    color: #000!important;
+}
+.location__icon__cont {
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    margin-right: 1rem;
+    color: #000;
+    font-size: 1.2rem;
+    }
+​
+.location__icon__cont i {
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+}
+.wrapper__email__and__location ul {
+    list-style: none;
+}
 
