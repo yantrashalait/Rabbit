@@ -132,7 +132,7 @@ class Shop(TemplateView):
 class BlogPage(ListView):
     template_name = 'item/blog.html'
     model = Blog
-    paginate_by = 2
+    paginate_by = 4
     context_object_name = "list"
     
     def get_context_data(self, **kwargs):

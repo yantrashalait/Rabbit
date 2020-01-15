@@ -29,7 +29,7 @@
 				                <div class="blog__desc recipes__wrapper__box">
 				                    <div class="blog__desc__cont">
 				                        <h3><a href="{% url 'item:recipe-detail' item.pk %}">{{ item.recipe_name }}</a></h3>
-				                        <p>{{ item.description }}</p>
+				                        <p>{{ item.description|truncatechars:100 }}</p>
 				                    </div>
 				                    <div class="blog__detail__link recipes__content__view__detail__btn">
 				                        <a href="{% url 'item:recipe-detail' item.pk %}" class="view__detail__recipes">View Details </a>

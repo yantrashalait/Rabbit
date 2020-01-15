@@ -10,11 +10,11 @@ ALLOWED_HOSTS = []
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'rabbit',
         'USER': 'postgres',
-        'PASSWORD': 'rajiv123',
-        'HOST': '',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }

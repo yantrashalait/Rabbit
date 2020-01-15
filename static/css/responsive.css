@@ -4,54 +4,178 @@
         display: flex;
         margin: auto;
     }
-    ​
 }
-    ​
 @media only screen and (max-width: 1024px) {
-    .rabbit__footage__slider .owl-nav {
-        margin: 0 0 0 1.4% !important;
-    }
-    ​
-    .story__yeller__caro .owl-nav {
-        margin: 50px 0 0 34.2% !important;
-    }
     .recipes__and__thumb__rabbit {
-        margin-top: -10.8rem;
+        margin-top: -10.75rem;
     }
-    .service__content{
-       padding: 0;
-       }
-    ​
-} 
-    ​
-    ​
+    .recipes__content__view__detail__btn {
+        padding: 0.6rem 3rem;
+    }
+    .service__content {
+        padding: 0;
+    }
+    .location__google__map iframe {
+        width: 100%;
+    }
+}
 @media only screen and (max-width: 992px) {
     .prticipation__lists__main {
         display: block;
-        }
-    } 
-    ​
-    ​
-@media only screen and (max-width: 770px){
-    .responsive__about{
+    }
+}
+@media only screen and (max-width: 770px) {
+    .responsive__about {
         max-width: 100%;
-        flex: 0 0 100%;	
+        flex: 0 0 100%;
         margin-bottom: 1.5rem;
-        }
-        .respsiv__award{
-            margin-top: 3rem;
-        }
-        
     }
-    ​
-    ​
-@media only screen and (max-width: 425px){
-    .service__content{
-       padding: 0;
-       }
+    .respsiv__award {
+        margin-top: 3rem;
     }
-
-    
-    
-    
-    
+    .thumb__and__name__position:before {
+        margin-left: 6rem;
+    }
+    .post__content__sidebar span {
+        font-size: 12px;
+    }
+    .post__content__sidebar h6 {
+        font-size: 12px;
+    }
+    .recipies__content__abt__rabbit {
+        padding: 0 0 10rem 0;
+    }
+    .recipes__and__thumb__rabbit {
+        margin-top: -16.9rem;
+    }
+    .video__thumb__outer:before {
+        height: 90%;
+    }
+    .success__stor__yelled:before {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .service__content {
+        padding: 0;
+    }
+    .contact__us:before {
+        height: 60%;
+        width: 50%;
+        bottom: 0;
+        top: 40%;
+    }
+    .serv_ban_para {
+        padding: 1rem 0rem 0.7rem 0rem;
+    }
+    .top__bgr__banner__srvs {
+        margin-bottom: 4rem;
+    }
+    .section__heading h1 {
+        margin: 0;
+        font-size: 2rem;
+        padding-bottom: 0.3rem;
+    }
+    .top__bgr__banner__srvs__content img {
+        width: 100%;
+    }
+    .faq__ban__txt {
+        left: 8%;
+        right: 8%;
+    }
+    .faq__abt__rabt__meat {
+        left: 6%;
+        right: 6%;
+    }
+    .slick-prev {
+        left: -16px;
+    }
+    .slick-next {
+        right: -15px;
+    }
+    .product__detail:before {
+        width: 100%;
+        height: 61%;
+        top: 39%;
+    }
+    .detail__content__abt__product {
+        padding: 0;
+    }
+    .product__detail:before {
+        top: 39%;
+    }
+    .shp-det-lnk {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .anything__relt__to__rabbit {
+        flex-direction: column;
+    }
+    .recipes__and__thumb__rabbit {
+        margin-top: -20.2rem;
+    }
+    .recipies__content__abt__rabbit {
+        padding: 0 0 13rem 0;
+    }
+    .video__thumb__outer:before {
+        width: 100%;
+    }
+    .dhulikhel__head__rabbit h3 {
+        color: #fff;
+    }
+    .home__main__banner:before {
+        width: 100%;
+    }
+}@media only screen and (max-width: 320px) {
+    .section__heading h1 {
+        font-size: 1rem;
+    }
+    .serv_ban_para {
+        padding: 0;
+    }
+    .product__detail:before {
+        top: 31%;
+    }
+    .recipes__and__thumb__rabbit {
+        margin-top: -14.85rem;
+    }
+    .recipies__content__abt__rabbit {
+        padding: 0 0 8rem 0;
+    }
+}@media only screen and (max-width: 375px) {
+    .recipes__and__thumb__rabbit {
+        margin-top: -17.68rem;
+    }
+}
+/* contact css
+.contact__social__icon li {
+    font-size: 1.3rem;
+    background: #eee;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: inline-block;
+}
+.contact__social__icon a{
+    color: #000!important;
+}
+​
+/*847 855
+​
+.wrapper__email__and__location ul{
+    list-style: none;
+}
+.location__icon__cont {
+    background: #323b94;
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    margin-right: 1rem;
+    }
+​
+.location__icon__cont i {
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+}
+​
+*/

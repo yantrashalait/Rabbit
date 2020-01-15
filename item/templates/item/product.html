@@ -38,7 +38,7 @@
 				                <div class="blog__desc recipes__wrapper__box">
 				                    <div class="blog__desc__cont">
 				                        <h3><a href="{% url 'item:product-detail' item.pk %}">{{ item.title }}</a></h3>
-				                        <p>{{ item.description }}</p>
+				                        <p>{{ item.description|truncatechars:100 }}</p>
 
 				                        <div class="rabbit__type__and__price">
 											{% if item.gender %}

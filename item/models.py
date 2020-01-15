@@ -4,11 +4,12 @@ from datetime import datetime
 # Create your models here.
 
 class CompanyIntroduction(models.Model):
-    video_url = models.URLField(help_text="Please enter the url of the video from youtube or other sources")
+    main_image = models.ImageField(upload_to='intro/main', null=True, blank=True)
     vision = models.TextField(null=True, blank=True)
     mission = models.TextField(null=True, blank=True)
     strategy = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='intro/', null=True, blank=True)
+    video_url = models.URLField(help_text="Please enter the url of the video from youtube or other sources")
 
 class CompanyDetail(models.Model):
     company_name = models.CharField(max_length=300, null=True, blank=True)
@@ -26,6 +27,8 @@ class CompanyDetail(models.Model):
 class Stories(models.Model):
     name = models.CharField(max_length=300, null=True, blank=True)
     description = models.TextField()
+    profession = models.CharField(max_length=300, null=True, blank=True)
+    place_name = models.CharField(max_length=300, null=True, blank=True)
     video = models.URLField(null=True, blank=True)
     image = models.ImageField(upload_to="story/", null=True, blank=True)
 
@@ -58,6 +61,7 @@ class WhatWeDo(models.Model):
 
 class Service(models.Model):
     image = models.ImageField(upload_to='image/', null=True, blank=True)
+    detail_image = models.ImageField(upload_to='image/detail_img', null=True, blank=True)
     title = models.CharField(max_length=100, null=True, blank=True)
     description = models.TextField()
 
@@ -91,6 +95,9 @@ class Testimonial(models.Model):
     person_image = models.ImageField(upload_to='testimonial/', null=True, blank=True)
     person_name = models.CharField(max_length=50, null=True, blank=True)
     position = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.person_name
 
 class Blog(models.Model):
     CATEGORY_CHOICES = (
@@ -193,6 +200,9 @@ class Question(models.Model):
     category = models.ForeignKey(QuestionCategory, on_delete=models.CASCADE, related_name='quecat', null=True, blank=True)
     question = models.CharField(max_length=300, null=True, blank=True)
     answer = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.question
 
 class Event(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='eventserv', null=True,blank=True)

@@ -68,7 +68,7 @@
 								Over 7 years of journey
 							</span>
 						</div>
-						<img src="{% static 'images/about__sec__img.jpg' %}" alt="">
+						<img src="{{ company_intro.main_image.url }}" alt="">
 						<div class="about__sec__popvdo__bx">
 						    <div class="pdetails-imagezoom popvdo__icn__hldr">
 								<div class="pdetails-singleimage" data-src="https://www.youtube.com/embed/tgbNymZ7vqY" data-sub-html=".gall__meta">
@@ -109,7 +109,7 @@
 	<section class="hm__what__we__offer pd__btm__tp">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					<div class="section__heading wht__heading no__padding__heading">
 					    <span class="section__title">Our Services</span>
 					    <h2>What we offer</h2>
@@ -230,8 +230,8 @@
 										<p>{{ item.description|linebreaks }}</p>
 									</div>
 									<div class="yellers__info">
-										<span class="yellers__desig mb-2">Farmer</span>
-										<span class="yellers__addr">Dhulikhel</span>
+										<span class="yellers__desig mb-2">{{ item.profession }}</span>
+										<span class="yellers__addr">{{ item.place_name }}</span>
 									</div>
 					        	</div>
 					        </div>
