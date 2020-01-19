@@ -11,11 +11,17 @@
 		            	<p>Find your interests by browsing our online course categories:</p>
 
 		            	<div class="anything__relt__to__rabbit">
+							{% if category %}
+							
 							{% for item in category %}
+						
 		            		<div class="shp-det-lnk">
 		            			<a href="{% url 'item:product-category' item.pk %}">{{ item.name }}</a>
 							</div>
+						
 							{% endfor %}
+							{% endif %}
+							
 		            	</div>
 			        </div>
 			    </div>
@@ -25,6 +31,7 @@
 <section class="recipes__and__thumb__rabbit pd__btm">
 	<div class="container">
 		<div class="row recipes__pd-btm">
+			{% if list %}
 			{% for item in list %}
 			<div class="col-lg-3 col-md-6 mb-4">
 				    <div class="blog__listshm__holder recipies__border__wrapper">
@@ -55,9 +62,12 @@
 				        </div>
 				    </div>
 			</div>
+		
 			{% endfor %}
+			{% endif %}
 		</div>
 		<div class="row recipes__pd-btm-top">
+			{% if list %}
 			{% if is_paginated %}
 			<div class="col-md-12">
 				<div class="bottom__pagination ">
@@ -78,6 +88,7 @@
 					  </ul>
 				</div>
 			</div>
+			{% endif %}
 			{% endif %}
 		</div>
 </section>

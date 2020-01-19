@@ -69,12 +69,17 @@ class ProductPage(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         categories = Category.objects.all().order_by('name')
-        context['category'] = categories
+        if categories:
+
+            context['category'] = categories
         return context
     
     def get_queryset(self, **kwargs):
         categories = Category.objects.all().order_by('name')
-        return CategoryDetail.objects.filter(category_id=categories[0].id)
+        if categories:
+            return CategoryDetail.objects.filter(category_id=categories[0].id)
+        else:
+            return []
 
 
 class ProductDetails(DetailView):
