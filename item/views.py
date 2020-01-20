@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, DetailView, ListView
 from . forms import ContactForm, ShopForm
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
-from . models import CompanyDetail, CompanyIntroduction, AboutUs, WhatWeDo, Partnership, AwardList, Testimonial, Service, ServiceDetail, Event, Package, PackageService, Gallery, Category, CategoryDetail, CompanyDetail, Message, OrderInfo, Recipe, Question, QuestionCategory, Blog, Program, Offer, WorkTogether, WorkFor, Stories, ProductDetail, ProductSubImage
+from . models import CompanyDetail, CompanyIntroduction, AboutUs, WhatWeDo, Partnership, AwardList, Testimonial, Service, ServiceDetail, Event, Package, PackageService, Gallery, ProductCategory, ProductCategoryDetail, CompanyDetail, Message, OrderInfo, Recipe, Question, QuestionCategory, Blog, Program, Offer, WorkTogether, WorkFor, Stories, ProductDetail, ProductSubImage
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -61,52 +61,52 @@ class ServicesDetail(DetailView):
 
 class ProductPage(ListView):
     template_name = 'item/product.html'
-    model = CategoryDetail
+    model = ProductCategoryDetail
     paginate_by = 4
     context_object_name = "list"
 
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        categories = Category.objects.all().order_by('name')
+        categories = ProductCategory.objects.all().order_by('name')
         if categories:
 
             context['category'] = categories
         return context
     
     def get_queryset(self, **kwargs):
-        categories = Category.objects.all().order_by('name')
+        categories = ProductCategory.objects.all().order_by('name')
         if categories:
-            return CategoryDetail.objects.filter(category_id=categories[0].id)
+            return ProductCategoryDetail.objects.filter(category_id=categories[0].id)
         else:
             return []
 
 
 class ProductDetails(DetailView):
-    model = CategoryDetail
+    model = ProductCategoryDetail
     template_name = 'item/product_detail.html'
     context_object_name = 'detail'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['product'] = CategoryDetail.objects.get(id=self.kwargs.get("pk"))
+        context['product'] = ProductCategoryDetail.objects.get(id=self.kwargs.get("pk"))
         return context
 
 class ProductCategory(ListView):
     template_name = 'item/product.html'
-    model = CategoryDetail
+    model = ProductCategoryDetail
     paginate_by = 4
     context_object_name = "list"
 
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        categories = Category.objects.all().order_by('name')
+        categories = ProductCategory.objects.all().order_by('name')
         context['category'] = categories
         return context
     
     def get_queryset(self, **kwargs):
-        return CategoryDetail.objects.filter(category_id=self.kwargs.get("pk"))
+        return ProductCategoryDetail.objects.filter(category_id=self.kwargs.get("pk"))
     
 
 class GalleryPage(TemplateView):

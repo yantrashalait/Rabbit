@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import CompanyIntroduction, CompanyDetail, Stories, Message, AboutUs, Service, AwardList, Partnership, Testimonial, Blog, WorkTogether, Recipe, Category, CategoryDetail, Package, PackageService, Gallery, QuestionCategory, Question, ServiceDetail, Event, OrderInfo, WhatWeDo, Program, Offer, WorkFor, ProductSubImage, ProductDetail
+from . models import CompanyIntroduction, CompanyDetail, Stories, Message, AboutUs, Service, AwardList, Partnership, Testimonial, Blog, WorkTogether, Recipe, ProductCategory, ProductCategoryDetail, Package, PackageService, Gallery, QuestionCategory, Question, ServiceDetail, Event, OrderInfo, WhatWeDo, Program, Offer, WorkFor, ProductSubImage, ProductDetail
 
 # Register your models here.
 
@@ -40,8 +40,8 @@ admin.site.register(Testimonial)
 admin.site.register(Blog)
 admin.site.register(WorkTogether)
 admin.site.register(Recipe)
-admin.site.register(Category)
-admin.site.register(CategoryDetail, ProductSubAdmin)
+admin.site.register(ProductCategory)
+admin.site.register(ProductCategoryDetail, ProductSubAdmin)
 admin.site.register(Package, PackageAdmin)
 admin.site.register(Gallery)
 admin.site.register(QuestionCategory)
