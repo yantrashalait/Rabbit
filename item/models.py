@@ -135,14 +135,14 @@ class Recipe(models.Model):
     def __str__(self):
         return self.recipe_name
 
-class ProductCategory(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self. name
 
-class ProductCategoryDetail(models.Model):
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='category', null=True, blank=True)
+class CategoryDetail(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category', null=True, blank=True)
     GENDER_CHOICES = (
         ('Male', 'Male'),
         ('Female', 'Female'),
@@ -160,10 +160,10 @@ class ProductCategoryDetail(models.Model):
 class ProductSubImage(models.Model):
     big_image = models.ImageField(upload_to='productsub/', null=True, blank=True)
     thumbnail_image = models.ImageField(upload_to='productthumb', null=True, blank=True)
-    category = models.ForeignKey(ProductCategoryDetail, on_delete=models.CASCADE, related_name='product_category')
+    category = models.ForeignKey(CategoryDetail, on_delete=models.CASCADE, related_name='product_category')
 
 class ProductDetail(models.Model):
-    category = models.ForeignKey(ProductCategoryDetail, on_delete=models.CASCADE, related_name='detail_product', null=True, blank=True)
+    category = models.ForeignKey(CategoryDetail, on_delete=models.CASCADE, related_name='detail_product', null=True, blank=True)
     title = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 
