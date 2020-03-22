@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, DetailView, ListView
 from . forms import ContactForm, ShopForm
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
-from . models import CompanyDetail, CompanyIntroduction, AboutUs, WhatWeDo, Partnership, AwardList, Testimonial, Service, ServiceDetail, Event, Package, PackageService, Gallery, Category, CategoryDetail, CompanyDetail, Message, OrderInfo, Recipe, Question, QuestionCategory, Blog, Program, Offer, WorkTogether, WorkFor, Stories, ProductDetail, ProductSubImage
+from . models import CompanyDetail, CompanyIntroduction, AboutUs, WhatWeDo, Partnership, AwardList, Testimonial, Service, ServiceDetail, Event, Package, PackageService, Gallery, Category, CategoryDetail, CompanyDetail, Message, OrderInfo, Recipe, Question, QuestionCategory, Blog, Program, Offer, WorkTogether, WorkFor, Stories, ProductDetail, ProductSubImage, Tour, TourDetailItinerary, IncludedCost, GalleryCategory
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -41,6 +41,7 @@ class Services(TemplateView):
         context = super().get_context_data(**kwargs)
         context['service'] = Service.objects.all()
         context['package'] = Package.objects.filter(service_id__isnull=True)
+        context['tour'] = Tour.objects.all()
         return context
 
 class ServicesDetail(DetailView):
@@ -108,13 +109,52 @@ class ProductCategory(ListView):
         return CategoryDetail.objects.filter(category_id=self.kwargs.get("pk"))
     
 
-class GalleryPage(TemplateView):
+# class GalleryPage(TemplateView):
+#     template_name = 'item/gallery.html'
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['gallery'] = Gallery.objects.all()
+#         context['cat'] = GalleryCategory.objects.all()
+#         return context
+
+class GalleryPage(ListView):
     template_name = 'item/gallery.html'
+    model = Gallery
+    context_object_name = "list"
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['gallery'] = Gallery.objects.all()
+        categories = GalleryCategory.objects.all()
+        if categories: 
+            context['category'] = categories
         return context
+    
+    def get_queryset(self, **kwargs):
+        categories = GalleryCategory.objects.all().order_by('name')
+        if categories:
+            return Gallery.objects.filter(category_id=categories[0].id)
+        else:
+            return []
+
+
+# class GalleryCategory(ListView):
+#     template_name = 'item/gallery.html'
+#     model = Gallery
+#     context_object_name = "list"
+
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         categories = GalleryCategory.objects.all().order_by('name')
+#         context['category'] = categories
+#         return context
+    
+#     def get_queryset(self, **kwargs):
+#         return Gallery.objects.filter(category_id=self.kwargs.get("pk"))
+
+
 
 class Shop(TemplateView):
     template_name = 'item/shop.html'
@@ -215,3 +255,19 @@ class FaqPage(TemplateView):
     def get_object(self):
         id_ = self.kwargs.get("pk")
         return get_object_or_404(Question, pk=id_)
+
+class TourDetail(DetailView):
+    template_name = 'item/tour-detail.html'
+    model = Tour
+    context_object_name = 'tour'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tour_det'] = TourDetailItinerary.objects.filter(tour_id=self.kwargs.get("pk"))
+        context['tour_cost'] = IncludedCost.objects.filter(tour_id=self.kwargs.get("pk"))
+        return context
+
+
+    
+
+

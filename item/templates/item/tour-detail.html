@@ -1,0 +1,110 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="tour__detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="detail__tour__wrapper mt-5">
+                    <div class="tour__video">
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/XXZFco-1zpo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</section>
+<section class="tour__detail_pack mt-4 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="packgage__tour__cont">
+                    <h5>Nepal Tour Packages</h5>
+                    <div id="accordion">
+                      <div class="card">
+                        <div class="card-header remov__bdr">
+                          <a class="card-link chang__bot__cl" data-toggle="collapse" href="#collapseOne">
+                            Trip Overview
+                            <span><i class="fa fa-plus" aria-hidden="true"></i></span>
+                          </a>
+                        </div>
+                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                          <div class="card-body">
+                            <!-- <H6 class="trip__head">Why Nepal Tour Packages?</H6> -->
+                            <div class="trip__overview__cont">
+                              <p>{{ tour.overview }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header remov__bdr">
+                          <a class="collapsed card-link chang__bot__cl" data-toggle="collapse" href="#collapseTwo">
+                          Detail Itinenary
+                          <span><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        </a>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                          <div class="card-body">
+                            <!-- <h6 class="trip__head">Tour Itinerary</h6> -->
+                            {% for item in tour_det %}
+                            <div class="itiner__content mb-4"> 
+                              <div class="contn__title">
+                                <span class="days">Day 1:</span>
+                                <span class="tour__task__lst"> {{ item.title }}</span>
+                              </div>
+                              <div class="tour__cont__detls">
+                                <p>{{ item.content }}</p>
+                              </div>
+                            </div>
+                            {% endfor %}
+                            <!-- <div class="itiner__content mb-4"> 
+                              <div class="contn__title">
+                                <span class="days">Day 2:</span>
+                                <span class="tour__task__lst"> Drive on tourist coach</span>
+                              </div>
+                              <div class="tour__cont__detls">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod possimus dolor quos culpa, distinctio totam dolores ipsam illum, eum vitae, ut illo esse ipsa optio consectetur! Quidem ipsa sit quaerat asperiores fugit repudiandae quos aliquid dolores debitis sint, qui obcaecati.</p>
+                              </div>
+                            </div>
+                            <div class="itiner__content mb-4"> 
+                              <div class="contn__title">
+                                <span class="days">Day 3:</span>
+                                <span class="tour__task__lst"> Drive on tourist coach</span>
+                              </div>
+                              <div class="tour__cont__detls">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod possimus dolor quos culpa, distinctio totam dolores ipsam illum, eum vitae, ut illo esse ipsa optio consectetur! Quidem ipsa sit quaerat asperiores fugit repudiandae quos aliquid dolores debitis sint, qui obcaecati.</p>
+                              </div>
+                            </div> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header remov__bdr">
+                          <a class="card-link chang__bot__cl" data-toggle="collapse" href="#collapsethree">
+                            Included Cost
+                            <span><i class="fa fa-plus" aria-hidden="true"></i></span>
+                          </a>
+                        </div>
+                        <div id="collapsethree" class="collapse" data-parent="#accordion">
+                          <div class="card-body">
+                            <!-- <H6 class="trip__head">Cost Included</H6> -->
+                            <div class="trip__overview__cont">
+                              <ul>
+                                {% for item in tour_cost %}
+                                <li><span class="inc__cost__itm"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>{{ item.title }}</li>
+                                <!-- <li><span class="inc__cost__itm"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Assistant Guide Group Size Above 8 + Person</li>
+                                <li><span class="inc__cost__itm"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Assistant Guide Group Size Above 8 + Person</li>
+                                <li><span class="inc__cost__itm"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Assistant Guide Group Size Above 8 + Person</li> -->
+                                {% endfor %}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

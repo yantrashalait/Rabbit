@@ -15,24 +15,106 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="portfolio-masonry pdetails-imagezoom">
-                                        {% for item in gallery %}
-					<li>
-			   <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="{{ item.image.url }}" data-sub-html=".gall__meta">
-                                <img src="{{ item.image.url }}" alt="">
-                                <div class="gall__meta">
-                                        <h2>{{ item.title }}</h2>
-                                        <p>{{ item.description }}</p>
-                                </div>
-                           </div>
-                                        </li>
+                <div class="row">
+                        <div class="col-md-12">
+                                <ul class="filters text-center">
+                                        <!-- <li class="active" data-filter="*"><a href="#!">All</a></li> -->
+                                    {% if category %}
+                                       {% for item in category %}
+                                        <li data-filter=".rabits"><a href="">{{ item.name }}</a></li>
                                         {% endfor %}
-				</ul>
-			</div>
-		</div>
-	</div>
+                                    {% endif %}
+                                        <!-- <li data-filter=".breed"><a href="#!">BREED</a></li>
+                                        <li data-filter=".farming"><a href="#!">FARMING</a></li> -->
+                                </ul>
+                        </div>
+                </div>
+                <div class="projects">
+                        <div class="row">
+                                <div class="col-md-12">
+                                                <ul class="portfolio-masonry pdetails-imagezoom">
+                                                    {% if list %}
+			                                        {% for item in list %}
+                                                        <li class="item rabits">
+                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab1.jpg" data-sub-html=".gall__meta">
+                                                                        <img src="{{ item.image.url }}" alt="">
+                                                                        <div class="gall__meta">
+                                                                        <h2>{{ item.title }}</h2>
+                                                                        <p>{{ item.description }}</p>
+                                                                        </div>
+                                                                </div>
+                                                        </li>
+                                                        {% endfor %}
+                                                        {% endif %}
+                                                        <!-- <li class="item breed">
+                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr"  data-src="images/masonry/rab2.jpg" data-sub-html=".gall__meta">
+                                                                        <img src="{% static 'images/masonry/rab2.jpg' %}" alt="">
+                                                                        <div class="gall__meta">
+                                                                        <h2>Image title goes here 02</h2>
+                                                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                                                        </div>
+                                                                </div>
+                                                        </li>
+                                                        <li class="item farming">
+                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr"  data-src="images/masonry/rab3.jpg" data-sub-html=".gall__meta">
+                                                                        <img src="{% static 'images/masonry/rab3.jpg' %}" alt="">
+                                                                        <div class="gall__meta">
+                                                                        <h2>Image title goes here 03</h2>
+                                                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                                                        </div>
+                                                                </div>
+                                                        </li>
+                                                        <li class="item rabits">
+                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr"  data-src="images/masonry/rab4.jpg" data-sub-html=".gall__meta">
+                                                                        <img src="{% static 'images/masonry/rab4.jpg' %}" alt="">
+                                                                        <div class="gall__meta">
+                                                                        <h2>Image title goes here 04</h2>
+                                                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                                                        </div>
+                                                                </div>
+                                                        </li>
+                                                        <li class="item breed">
+                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab5.jpg" data-sub-html=".gall__meta">
+                                                                        <img src="{% static 'images/masonry/rab5.jpg' %}" alt="">
+                                                                        <div class="gall__meta">
+                                                                        <h2>Image title goes here 05</h2>
+                                                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                                                        </div>
+                                                                </div>
+                                                        </li>
+                                                        <li class="item farming">
+                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr"  data-src="images/masonry/rab6.jpg" data-sub-html=".gall__meta">
+                                                                        <img src="{% static 'images/masonry/rab6.jpg' %}" alt="">
+                                                                        <div class="gall__meta">
+                                                                        <h2>Image title goes here 06</h2>
+                                                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                                                        </div>
+                                                                </div>
+                                                        </li>
+                                                        <li class="item rabits">
+                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr"  data-src="images/masonry/rab7.jpg" data-sub-html=".gall__meta">
+                                                                        <img src="{% static 'images/masonry/rab7.jpg' %}" alt="">
+                                                                        <div class="gall__meta">
+                                                                        <h2>Image title goes here 07</h2>
+                                                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                                                        </div>
+                                                                </div>
+                                                        </li>
+                                                        <li class="item breed">
+                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr"  data-src="images/masonry/slide1.jpg" data-sub-html=".gall__meta">
+                                                                        <img src="{% static 'images/masonry/slide1.jpg' %}" alt="">
+                                                                        <div class="gall__meta">
+                                                                        <h2>Image title goes here 08</h2>
+                                                                        <p>Online learning offers a new way to explore subjects you’re passionate</p>
+                                                                        </div>
+                                                                </div>
+                                                        </li> -->
+                                                </ul>
+                                        </div>
+                                </div>
+                        </div> 
+                </div>
+        </div>   
 </section>
 {% endblock %}
 {% block scripts %}
@@ -40,4 +122,6 @@
 		$("#gallery").addClass('active');
 	</script>
 {% endblock %}
+
+
 

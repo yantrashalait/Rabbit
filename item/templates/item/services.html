@@ -56,6 +56,67 @@
 			</div>			
 		</div>
 </section>
+<section class="what__we__serve pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 mx-auto text-center mb-3">
+				<div class="packages__we__serve__content">
+					<h2>Our Tour</h2>
+					<div class="contain__about__we__do">
+						<p>Online learning offers a new way to explore subjects you’re passionate about.<br>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row align-items-center">
+			<div class="col-md-12">
+				{% for item in tour %}
+				<div class="tour__package mb-3">
+					<div class="tour img__thumb__package">
+						<img src="{{ item.image.url }}" alt="">
+					</div>
+					<div class=" tour package__tour__content">
+						<div class="content__mid">	
+								<h6>{{ item.name }}</h6>
+								<p>{{ item.overview }}</p>
+							</div>
+							<div class="tour view__detail__packages__in_tour">
+								<div class="price__per_per">
+									<span>Rs.<strong>{{ item.price }}</strong></span>
+									<!-- <span>Per Person</span> -->
+								</div>
+							<div class="package__tour__detail">
+								<a href="{% url 'item:tour-detail' item.pk %}">View More</a>
+							</div>
+						</div>
+					</div>					
+				</div>
+				{% endfor %}
+				<!-- <div class="tour__package mb-3">
+					<div class="tour img__thumb__package">
+						<img src="{% static 'images/blog01.jpg' %}" alt="">
+					</div>
+					<div class=" tour package__tour__content">
+						<div class="content__mid">	
+								<h6>Grand Hotel - Non Casino</h6>
+								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam maiores officiis repellat ea consequuntur praesentium placeat pariatur voluptate nobis modi?</p>
+							</div>
+							<div class="tour view__detail__packages__in_tour">
+								<div class="price__per_per">
+									<span>Rs.<strong>22,343</strong></span>
+									<span>Per Person</span>
+								</div>
+							<div class="package__tour__detail">
+								<a href="#">View More</a>
+							</div>
+						</div>
+					</div>					
+				</div> -->
+			</div>
+		</div>			
+	</div>
+</section>
 <section class="rabbit__available__packages pd__btm__tp">
 	<div class="container">
 		<div class="row">

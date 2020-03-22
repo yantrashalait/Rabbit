@@ -1,0 +1,43 @@
+{% extends 'item/base.html' %}
+{% load static %}
+{% block content %}
+<section class="rabbit__gallery pd__btm__tp">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 mx-auto">
+				<div class="section__heading text-center gallery__content">
+					<h2>View our gallery</h2>
+					<p>Himalayan Rabbits are naturally produced meat-type 
+						</br>rabbits raised
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="portfolio-masonry pdetails-imagezoom">
+                                        {% for item in gallery %}
+					<li>
+			   <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="{{ item.image.url }}" data-sub-html=".gall__meta">
+                                <img src="{{ item.image.url }}" alt="">
+                                <div class="gall__meta">
+                                        <h2>{{ item.title }}</h2>
+                                        <p>{{ item.description }}</p>
+                                </div>
+                           </div>
+                                        </li>
+                                        {% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block scripts %}
+	<script>
+		$("#gallery").addClass('active');
+	</script>
+{% endblock %}
+

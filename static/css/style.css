@@ -182,6 +182,7 @@ ul{
     height: 100%;
     top: 0;
 }
+
 .offers__bx{
     position: relative;
 }
@@ -212,8 +213,7 @@ ul{
     background-position: center;
 }
 
-.participation__lists{
-}
+
 
 
 .participation__lists__hldr {
@@ -434,6 +434,14 @@ ul{
 .wht__people___say{
     margin-bottom: 4rem;
 }
+.thumb__and__name__position:before{
+    content: '';
+    display: block;
+    width: 50%;
+    height: 1px;
+    background: #eee;
+    margin-left: 10rem;
+}
 .teller__position {
     padding: 1rem 0;
 }
@@ -467,7 +475,6 @@ ul{
 
 .portfolio-masonry li img {
     width: 100%;
-    cursor: pointer;
 }
 
 .lg-sub-html h2{
@@ -634,9 +641,9 @@ ul{
 }
 .order__form {
     padding: 2rem;
-    width: 100%;
+    width: 80%;
     border: 1px solid #323b94;
-    /* margin-left: 4rem; */
+    margin-left: 4rem;
 }
 .order__detail__input {
     border: none;
@@ -667,10 +674,6 @@ ul{
 /* End shop--meat page css */
 
 /* Start news__blog*/
-.news__blog {
-    padding: 1rem 0 0 0;
-    position: relative;
-}
 .news__and__event__detail h3{
     margin-bottom: 0.8rem;
 }
@@ -699,51 +702,42 @@ ul{
 .blog__content__rabbit h5{
     margin: 0 0 2rem 0;
 }
-
 .blog__content__rabbit h5 a{
     color: #000;
 }
 .blog__content__rabbit h5 a:hover{
     text-decoration: none;
 }
-
-.blog__container__sidebar {
-    margin-top: -7.1rem;
-    border: 1px solid #eee;
-    padding: 3rem 1rem 0rem 1rem;
-    position: absolute;
-    right: 20px;
-
-}
-.blgs__sidebar h6{
-    margin-bottom: 1.4rem;
-
-}
-.wrapper__post__blog ul{
-    list-style: none;
-}
-.wrapper__post__blog a{
+.wrapper__post__blog {
     display: flex;
-    color: #000;
 }
-.wrapper__post__blog a:hover{
-    text-decoration: none;
-
+.post__content__sidebar {
+    margin-left: 2rem;
 }
-.news__sidebar__post {
-    margin-right: 1rem;
-    max-width: 32%;
+.recent__post__abt__rabt {
+    border: 1px solid #eee;
+    padding: 2rem 2rem;
 }
-.news__sidebar__post img{
-    width: 100%;
-}
-.wrapper__post__blog li:after{
+.blog__news__line__sep:before{
     content: '';
-    display:block;
+    display: block;
+    background: #eee;
     width: 100%;
     height: 1px;
-    background: #eee;
-    margin: 0.7rem 0;
+    margin: 1rem 0;
+}
+.blog__container__sidebar{
+    margin-top: -7.1rem;
+}
+.mg__btm__news__blog{
+    margin-bottom: 5rem;
+}
+.recent__post__abt__rabt h6{
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+.post__content__sidebar a:hover{
+    text-decoration: none;
 }
 /* End news__blog*/
 
@@ -783,6 +777,21 @@ ul{
 .contact__detail__info p{
     margin: 1.5rem 0;
 }
+.s__icon {
+    width: 9%;
+    background: #eee;
+    padding: 0.6rem 0.7rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.s__icon a{
+    color: #000;
+    font-size: 20px;
+
+}
 .contact__social__icon {
     display: flex;
 }
@@ -790,6 +799,19 @@ ul{
     display: flex;
     align-items: center;
      margin-bottom: 1.5rem;
+}
+.location__icon__cont {
+    background: #323b94;
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    margin-right: 1rem;
+    width: 8.4%;
+}
+
+.location__icon__cont i {
+    color: #fff;
+    margin-left: 2px;
+    font-size: 16px;
 }
 
 .location__detail__cont p{
@@ -951,7 +973,7 @@ ul{
 }
 .plans__and__enquery {
     border: 1px solid #eee;
-    padding: 2rem;
+    padding: 3rem;
 }
 .types__of__package__plan ul li{
     margin-bottom: 0.5rem;
@@ -1011,7 +1033,6 @@ ul{
 }
 
 .serv__ban__txt {
-    width: 85%;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -1020,23 +1041,28 @@ ul{
 
 .serv_ban_para{
     background: #fff;
-    padding: 2rem 1rem;
+    padding: 2rem 2rem 0 2rem;
 }
 
 .contain__about__rabt__offer__as__srvs p{
     padding-bottom: 2.2rem;
 }
+.image__finance__enger img{
+    width: 100%;
+    object-fit: contain;
+}
 .finance__paragr {
-    padding-left: 1rem;
+    padding-left: 2.5rem;
+}
+.finance__paragr p{
+    margin-bottom: 2rem;
 }
 .image__finance__enger {
-    width: 50%;
+    display: flex;
+    padding: 0 3rem;
 }
 .detls__content__engeering h4{
     padding: 2rem 0;
-}
-.wrapper__resposiv__ser__det {
-    display: flex;
 }
 .learn__more__finance {
     padding-top: 2rem;
@@ -1062,8 +1088,7 @@ ul{
 .faq__ban__txt {
     position: absolute;
     bottom: 0;
-    left: 13%;
-    right: 13%;
+    left: 15%;
 }
 .card-header .faq__question {
     font-size: 18px;
@@ -1118,6 +1143,7 @@ ul{
 }
 
 .foot__nav__head {
+    margin: 0 0 0 2.5rem;
     color: #fff;
     font-size: 1rem;
     font-weight: 500;
@@ -1135,34 +1161,265 @@ footer{
 }
 
 /* Endfooter css */
-.frequently__ask__qans{
-    padding-bottom: 3rem;
+
+
+/*LAST ADDED*/
+
+/*SOCIAL ICONS*/
+.social__links{
+    margin-top: 1.5rem;
 }
-.contact__social__icon li {
-    font-size: 1.3rem;
-    background: #eee;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    display: inline-block;
+ .link__head{
+    font-weight: bold;
 }
-.contact__social__icon a{
-    color: #000!important;
-}
-.location__icon__cont {
-    padding: 0.8rem 1rem;
-    border-radius: 50px;
-    margin-right: 1rem;
-    color: #000;
-    font-size: 1.2rem;
-    }
-​
-.location__icon__cont i {
-    color: #fff;
-    font-size: 1rem;
+.social__links ul{
     display: flex;
 }
-.wrapper__email__and__location ul {
-    list-style: none;
+.social__links ul li{
+    font-size: 17px;
+   margin-right: 0.7rem;
+   margin-top: 0;
+   background: #adb5bd7d;
+   padding: 3px 10px;
+   cursor: pointer;
 }
+/*END SOCIAL ICONS*/
+
+/* SERVICE SECTION*/
+.tour__package {
+    display: flex;
+}
+.img__thumb__package{
+    height: 270;
+    width: 380;
+}
+.img__thumb__package img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.package__tour__detail{
+    margin-top: 1rem;
+    background: #323b94;
+    padding: 0.7rem 2.5rem;
+    text-align: center;
+    
+}
+.package__tour__detail a{
+    text-decoration: none;
+    color: #fff;
+}
+.content__mid {
+    padding: 1rem;
+}
+.package__tour__content{
+    display: flex;
+    background: #f8f9f987;
+}
+.view__detail__packages__in_tour{
+    padding: 20px 15px;
+    width: 35%;
+}
+.price__per_per {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+}
+.price__per_per strong{
+    font-size: 20px;
+    margin-left: 5px;
+}
+/* END SERVICE SECTION*/
+
+/* DETAIL TOUR SECTION*/
+a.chang__bot__cl{
+    color: #000;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+.remov__bdr{
+    border: none;
+}
+.contn__title{
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+.trip__head{
+    position: relative;
+    padding-left: 1.2rem;
+}
+.trip__head:before{
+    content: "";
+    position: absolute;
+    background-color: #323b94;
+    height: 18px;
+    width: 15px;
+    left: 0;
+    bottom: 0;
+}
+.trip__overview__cont ul{
+    list-style-type: none;
+}
+.trip__overview__cont ul li{
+    margin-bottom: 0.5rem;
+}
+.trip__overview__cont ul li{
+    margin-bottom: 0.5rem;
+}
+.inc__cost__itm{
+    margin-right: 0.5rem;
+    color: #323b94;
+}
+
+
+/*CSS START*/
+
+/*LAST ADDED*/
+
+/*SOCIAL ICONS*/
+.social__links{
+    margin-top: 1.5rem;
+}
+ .link__head{
+    font-weight: bold;
+}
+.social__links ul{
+    display: flex;
+}
+.social__links ul li{
+    font-size: 17px;
+   margin-right: 0.7rem;
+   margin-top: 0;
+   background: #adb5bd7d;
+   padding: 3px 10px;
+   cursor: pointer;
+}
+/*END SOCIAL ICONS*/
+
+/* SERVICE SECTION*/
+.tour__package {
+    display: flex;
+}
+.img__thumb__package{
+    height: 270;
+    width: 380;
+    width: 20%;
+}
+.img__thumb__package img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.package__tour__detail{
+    margin-top: 1rem;
+    background: #323b94;
+    padding: 0.7rem;
+    text-align: center;
+    
+}
+.package__tour__detail a{
+    text-decoration: none;
+    color: #fff;
+}
+.content__mid {
+    padding: 1rem;
+    width: 100%;
+}
+.package__tour__content{
+    display: flex;
+    background: #f8f9f987;
+    width: 80%;
+}
+.view__detail__packages__in_tour{
+    padding: 20px 0;
+    width: 25%;
+}
+.price__per_per {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+}
+.price__per_per strong{
+    font-size: 20px;
+    margin-left: 5px;
+}
+/* END SERVICE SECTION*/
+
+/* DETAIL TOUR SECTION*/
+a.chang__bot__cl{
+    color: #000;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+.remov__bdr{
+    border: none;
+}
+.contn__title{
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+.trip__head{
+    position: relative;
+    padding-left: 1.2rem;
+}
+.trip__head:before{
+    content: "";
+    position: absolute;
+    background-color: #323b94;
+    height: 18px;
+    width: 15px;
+    left: 0;
+    bottom: 0;
+}
+.trip__overview__cont ul{
+    list-style-type: none;
+}
+.trip__overview__cont ul li{
+    margin-bottom: 0.5rem;
+}
+.trip__overview__cont ul li{
+    margin-bottom: 0.5rem;
+}
+.inc__cost__itm{
+    margin-right: 0.5rem;
+    color: #323b94;
+}
+/* END DETAIL TOUR SECTION*/
+
+ul.filters{
+    list-style-type: none;
+    width: 100%;
+    padding: 2rem 0;
+    margin-right: 1rem;
+
+}
+.filters li{
+    display: inline-block;
+}
+.filters li a{
+    text-decoration:none;
+    color:#000;
+    background-color: #e6e9ed;
+    padding: 1rem 2rem;
+}
+.filters li a:hover{
+    background-color: #323b94;
+    color: #fff;
+}
+.filters li.active a{
+    background-color: #323b94;
+    color: #fff;
+}
+/*LAST ADDED*/
+/*CSS END*/
+
+/* END DETAIL TOUR SECTION*/
+
+/*LAST ADDED*/
 

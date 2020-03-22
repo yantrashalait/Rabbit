@@ -18,6 +18,7 @@ class CompanyDetail(models.Model):
     facebook_url = models.URLField(help_text="Please enter the url of your company's facebook", null=True, blank=True )
     youtube_url = models.URLField(help_text="Please enter the url of your company's youtube", null=True, blank=True)
     instagram_url = models.URLField(help_text="Please enter the url of your company's instagram", null=True, blank=True)
+    gmail_url = models.URLField(help_text="Please enter the url of your company's gmail", null=True, blank=True)
     twitter_url = models.URLField(help_text="Please enter the url of your company's twitter", null=True, blank=True)
     location = models.CharField(max_length=200, null=True, blank=True)
     contact_number = models.CharField(max_length=20, null=True, blank=True)
@@ -100,11 +101,6 @@ class Testimonial(models.Model):
         return self.person_name
 
 class Blog(models.Model):
-    CATEGORY_CHOICES = (
-        ('News', 'News'),
-        ('Event', 'Event'),
-    )
-    category = models.CharField(max_length=100, choices=CATEGORY_CHOICES, null=True, blank=True)
     title = models.CharField(max_length=300, null=True, blank=True)
     description = models.TextField()
     image = models.ImageField(upload_to='blog/', null=True, blank=True, help_text='Image Size: width=360px, height=295px')
@@ -180,7 +176,14 @@ class PackageService(models.Model):
     service = models.CharField(max_length=100, null=True, blank=True)
 
 
+class GalleryCategory(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name 
+
 class Gallery(models.Model):
+    category = models.ForeignKey(GalleryCategory, on_delete=models.CASCADE, related_name='cat_gal', null=True, blank=True)
     title = models.CharField(max_length=100, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='gallery/', null=True, blank=True)
@@ -239,6 +242,32 @@ class Offer(models.Model):
     title = models.CharField(max_length=300)
     description = models.TextField()
     image = models.ImageField(upload_to="offer/", help_text='Image Size: width=262px, height=489px')
+
+    def __str__(self):
+        return self.title
+
+class Tour(models.Model):
+    name = models.CharField(max_length=300)
+    price = models.CharField(max_length=200)
+    overview = models.TextField()
+    image = models.ImageField(upload_to="tour/", help_text='Image Size: width=262px, height=489px')
+    video = models.URLField(help_text="Please enter the url of the video from youtube or other sources")
+    
+
+    def __str__(self):
+        return self.name
+
+class TourDetailItinerary(models.Model):
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='tour')
+    title = models.CharField(max_length=300)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+class IncludedCost(models.Model):
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='inc_tour')
+    title = models.CharField(max_length=300)
 
     def __str__(self):
         return self.title

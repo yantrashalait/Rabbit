@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import CompanyIntroduction, CompanyDetail, Stories, Message, AboutUs, Service, AwardList, Partnership, Testimonial, Blog, WorkTogether, Recipe, Category, CategoryDetail, Package, PackageService, Gallery, QuestionCategory, Question, ServiceDetail, Event, OrderInfo, WhatWeDo, Program, Offer, WorkFor, ProductSubImage, ProductDetail
+from . models import CompanyIntroduction, CompanyDetail, Stories, Message, AboutUs, Service, AwardList, Partnership, Testimonial, Blog, WorkTogether, Recipe, Category, CategoryDetail, Package, PackageService, Gallery, GalleryCategory, QuestionCategory, Question, ServiceDetail, Event, OrderInfo, WhatWeDo, Program, Offer, WorkFor, ProductSubImage, ProductDetail, Tour, TourDetailItinerary, IncludedCost
 
 # Register your models here.
 
@@ -28,6 +28,17 @@ class ProductDetailInline(admin.TabularInline):
 class ProductSubAdmin(admin.ModelAdmin):
     inlines = [ ProductSubImageInline, ProductDetailInline, ]
 
+class TourDetailInline(admin.TabularInline):
+    model = TourDetailItinerary
+    extra = 2
+
+class IncludedCostInline(admin.TabularInline):
+    model = IncludedCost
+    extra = 2
+
+class TourAdmin(admin.ModelAdmin):
+    inlines = [ TourDetailInline, IncludedCostInline, ]
+
 admin.site.register(CompanyIntroduction)
 admin.site.register(CompanyDetail)
 admin.site.register(Stories)
@@ -52,3 +63,5 @@ admin.site.register(WhatWeDo)
 admin.site.register(Program)
 admin.site.register(Offer)
 admin.site.register(WorkFor)
+admin.site.register(Tour, TourAdmin)
+admin.site.register(GalleryCategory)

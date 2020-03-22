@@ -53,7 +53,7 @@
 				        <a class="nav-link" href="{% url 'item:shop' %}">Shop</a>
 				      </li>
 				      <li class="nav-item" id="blog">
-				        <a class="nav-link" href="{% url 'item:blog' %}">News and Events</a>
+				        <a class="nav-link" href="{% url 'item:blog' %}">Blog</a>
                       </li>
                       <li class="nav-item" id="faq">
 				        <a class="nav-link" href="{% url 'item:faq' %}">FAQ</a>
@@ -88,6 +88,16 @@
                             <br/>
                             <p>{{ info.contact_number }}<br/>{{ info.email }}</p>
 
+                        </div>
+                        <div class="social__links">
+                            <span class="link__head">Follow Us:</span>
+                            <ul>
+                                <a href="{{ info.facebook_url }}"><li><i class="fa fa-facebook" aria-hidden="true"></i></li></a>
+                                <a href="{{ info.instagram_url }}"><li><i class="fa fa-instagram" aria-hidden="true"></i></li></a>
+                                <a href="{{ info.gmail_url }}"><li><i class="fa fa-google" aria-hidden="true"></i></li></a>
+                                <a href="{{ info.twitter_url }}"><li><i class="fa fa-twitter" aria-hidden="true"></i></li></a>
+                                <a href="{{ info.youtube_url }}"><li><i class="fa fa-youtube" aria-hidden="true"></i></li></a>
+                            </ul>
                         </div>
                     </div>
                 </div>
