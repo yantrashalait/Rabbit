@@ -120,39 +120,34 @@ class ProductCategory(ListView):
 
 class GalleryPage(ListView):
     template_name = 'item/gallery.html'
-    model = Gallery
+    model = GalleryCategory
     context_object_name = "list"
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        categories = GalleryCategory.objects.all()
+        categories = GalleryCategory.objects.all().order_by('name')
         if categories: 
             context['category'] = categories
         return context
-    
+
     def get_queryset(self, **kwargs):
         categories = GalleryCategory.objects.all().order_by('name')
         if categories:
             return Gallery.objects.filter(category_id=categories[0].id)
         else:
             return []
-
-
-# class GalleryCategory(ListView):
-#     template_name = 'item/gallery.html'
-#     model = Gallery
-#     context_object_name = "list"
-
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         categories = GalleryCategory.objects.all().order_by('name')
-#         context['category'] = categories
-#         return context
     
-#     def get_queryset(self, **kwargs):
-#         return Gallery.objects.filter(category_id=self.kwargs.get("pk"))
+
+
+class GalleryCategoryView(ListView):
+    template_name = 'item/gallery.html'
+    model = Gallery
+    context_object_name = "cat"
+
+    def get_queryset(self, **kwargs):
+        return Gallery.objects.filter(category_id=self.kwargs.get("pk"))
+
+
 
 
 

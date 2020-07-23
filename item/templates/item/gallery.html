@@ -19,8 +19,8 @@
                         <div class="col-md-12">
                                 <ul class="filters text-center">
                                         <!-- <li class="active" data-filter="*"><a href="#!">All</a></li> -->
-                                    {% if category %}
-                                       {% for item in category %}
+                                    {% if list %}
+                                       {% for item in list %}
                                         <li data-filter=".rabits"><a href="">{{ item.name }}</a></li>
                                         {% endfor %}
                                     {% endif %}
@@ -33,19 +33,21 @@
                         <div class="row">
                                 <div class="col-md-12">
                                                 <ul class="portfolio-masonry pdetails-imagezoom">
-                                                    {% if list %}
-			                                        {% for item in list %}
-                                                        <li class="item rabits">
-                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab1.jpg" data-sub-html=".gall__meta">
-                                                                        <img src="{{ item.image.url }}" alt="">
-                                                                        <div class="gall__meta">
-                                                                        <h2>{{ item.title }}</h2>
-                                                                        <p>{{ item.description }}</p>
-                                                                        </div>
-                                                                </div>
-                                                        </li>
+                                                    <!-- {% if list %} -->
+                                                        {% for item in list %}
+                                                                {% for obj in item.cat_gal.all %}
+                                                                        <li class="item rabits">
+                                                                                <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr" data-src="images/masonry/rab1.jpg" data-sub-html=".gall__meta">
+                                                                                        <img src="{{ obj.image.url }}" alt="">
+                                                                                        <div class="gall__meta">
+                                                                                        <h2>{{ obj.title }}</h2>
+                                                                                        <p>{{ obj.description }}</p>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </li>
+                                                                {% endfor %}
                                                         {% endfor %}
-                                                        {% endif %}
+                                                        <!-- {% endif %} -->
                                                         <!-- <li class="item breed">
                                                                 <div class="portfolio-item pdetails-singleimage gal__img__txt__hldr"  data-src="images/masonry/rab2.jpg" data-sub-html=".gall__meta">
                                                                         <img src="{% static 'images/masonry/rab2.jpg' %}" alt="">
